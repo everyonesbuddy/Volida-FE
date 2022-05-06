@@ -16,13 +16,13 @@ export class SubscriptionService {
     const subsData: SubsData = {id: id, auth:{_id: localStorage.getItem('_id')}};
     
     let header = new HttpHeaders().set("Authorization", 'Bearer '+localStorage.getItem('token'));
-    this.http.post("http://localhost:8000/api/create-subscription", subsData, {headers:header}).subscribe((response: any) => {
+    this.http.post("https://volida-be.herokuapp.com/api/create-subscription", subsData, {headers:header}).subscribe((response: any) => {
       return window.open(response,"_self");
     })
   }
 
   getSubscriptionStatus() {
-    this.http.get("http://localhost:8000/api/subscription-status/?_id="+localStorage.getItem('_id')).subscribe((response: any) => {
+    this.http.get("https://volida-be.herokuapp.com/api/subscription-status/?_id="+localStorage.getItem('_id')).subscribe((response: any) => {
       if(response.subscriptions.length === 0) {
         this.router.navigate(['/subscriptions']);
       } else {
@@ -33,7 +33,7 @@ export class SubscriptionService {
 
 
    manageSubscription() {
-     this.http.get("http://localhost:8000/api/customer-portal/?_id="+localStorage.getItem('_id')).subscribe((response: any) => {
+     this.http.get("https://volida-be.herokuapp.com/api/customer-portal/?_id="+localStorage.getItem('_id')).subscribe((response: any) => {
       return window.open(response,"_self");
     })
    }
