@@ -1,0 +1,37 @@
+// a {
+//   color: #000000;
+//   text-decoration: none;
+// }
+
+.footer {
+  max-width: 70%;
+  margin: 1rem auto;
+  overflow: auto;
+  text-align: center;
+}
+
+.footer, .footer a {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.footer p {
+  margin-bottom: 1.5rem;
+}
+
+.footer .footer-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid: 2rem;
+}
+
+.footer li {
+  line-height: 1.9;
+}
+
+@media(max-width: 960px) {
+  .footer .footer-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
