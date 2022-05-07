@@ -18,7 +18,7 @@ export class SettingsPageComponent implements OnInit {
 
   //solving this way cause route resolver did not work
   getSubscriptions() {
-    this.http.get("http://localhost:8000/api/subscriptions/?_id="+localStorage.getItem('_id')).subscribe((response: any) => {
+    this.http.get("https://volida-be.herokuapp.com/api/subscriptions/?_id="+localStorage.getItem('_id')).subscribe((response: any) => {
       const subscriptionData = response.data;
       this.subscriptionData = subscriptionData;
     })

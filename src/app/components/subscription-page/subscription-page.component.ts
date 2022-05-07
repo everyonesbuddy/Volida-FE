@@ -18,7 +18,7 @@ export class SubscriptionPageComponent implements OnInit {
 
   //solving this way cause route resolver did not work
   getSubscriptionInfo() {
-    this.http.get("http://localhost:8000/api/prices").subscribe(response => {
+    this.http.get("https://volida-be.herokuapp.com/api/prices").subscribe(response => {
       return response;
     })
   }
