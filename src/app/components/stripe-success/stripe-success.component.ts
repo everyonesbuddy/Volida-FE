@@ -11,7 +11,7 @@ export class StripeSuccessComponent implements OnInit {
   constructor(private subscriptionService: SubscriptionService) { }
 
   ngOnInit(): void {
-    this.subscriptionService.getSubscriptionStatus();
+    this.subscriptionService.getPaymentStatus();
   }
 
 }

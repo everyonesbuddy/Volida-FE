@@ -17,9 +17,6 @@ export class DashboardComponent implements OnInit {
   constructor(private eventService: EventsService, private recentStreamService: RecentStreamService, private router: Router, private subscriptionService: SubscriptionService) { }
 
   ngOnInit(): void {
-    //check subscription status
-    this.subscriptionService.getSubscriptionStatus();
-
     //get all events
     this.eventService.getAllEvents()
       .then(events => {
