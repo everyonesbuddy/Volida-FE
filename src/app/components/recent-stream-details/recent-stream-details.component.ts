@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RecentStreamService } from 'src/app/services/recent-stream.service';
 import { ActivatedRoute } from '@angular/router';
+import { SubscriptionService } from 'src/app/services/subscription.service';
 
 @Component({
   selector: 'app-recent-stream-details',
@@ -9,8 +10,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RecentStreamDetailsComponent implements OnInit {
   recentStream:any = [];
+  amountInCents: any = '';
+  hideVideolink: boolean = false;
 
-  constructor(private recentStreamService: RecentStreamService, private activatedRoute: ActivatedRoute) { }
+  constructor(private subscriptionService: SubscriptionService, private recentStreamService: RecentStreamService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
@@ -20,8 +23,26 @@ export class RecentStreamDetailsComponent implements OnInit {
           .then(recentStreams => {
             this.recentStream = recentStreams;
             console.log(this.recentStream)
+            this.amountInCents = recentStreams.fields.amountInCents
+             this.checkPayment().subscribe((res:any)=>{
+              console.log(res.subscriptions);
+              res.subscriptions.forEach((val:any)=>{
+                if(!this.hideVideolink){
+                  this.hideVideolink = (val.amount == this.amountInCents && val.amount_received == this.amountInCents);
+                }
+              })
+              return res.subscriptions;
+            })
           });
     })
+  }
+
+  onPayment(id: any) {
+    this.subscriptionService.handlePayment(id);
+  }
+
+  checkPayment(): any {
+    return this.subscriptionService.checkPayment();
   }
 
 }

@@ -13,13 +13,10 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { SubscriptionPageComponent } from './components/subscription-page/subscription-page.component';
-import { SubscriptionCardComponent } from './components/subscription-card/subscription-card.component';
 import { AuthInterceptor } from './interceptor/auth-interceptor';
 import { StripeSuccessComponent } from './components/stripe-success/stripe-success.component';
 import { StripeCancelComponent } from './components/stripe-cancel/stripe-cancel.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { SettingsPageComponent } from './components/settings-page/settings-page.component';
 import { EventDetailsComponent } from './components/event-details/event-details.component';
 import { SafeurlPipe } from './customepipe/safeurl.pipe';
 import { RecentStreamDetailsComponent } from './components/recent-stream-details/recent-stream-details.component';
@@ -38,12 +35,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AboutComponent,
     LoginComponent,
     SignUpComponent,
-    SubscriptionPageComponent,
-    SubscriptionCardComponent,
     StripeSuccessComponent,
     StripeCancelComponent,
     DashboardComponent,
-    SettingsPageComponent,
     EventDetailsComponent,
     SafeurlPipe,
     RecentStreamDetailsComponent,

@@ -12,23 +12,28 @@ export class SubscriptionService {
   constructor(private http: HttpClient, private router: Router) { }
 
 
-  handleSubscription(id: any) {
+  handlePayment(id: any) {
     const subsData: SubsData = {id: id, auth:{_id: localStorage.getItem('_id')}};
-    
     let header = new HttpHeaders().set("Authorization", 'Bearer '+localStorage.getItem('token'));
-    this.http.post("https://volida-be.herokuapp.com/api/create-subscription", subsData, {headers:header}).subscribe((response: any) => {
+    this.http.post("https://volida-be.herokuapp.com/api/create-payment", subsData, {headers:header}).subscribe((response: any) => {
       return window.open(response,"_self");
     })
   }
 
-  getSubscriptionStatus() {
-    this.http.get("https://volida-be.herokuapp.com/api/subscription-status/?_id="+localStorage.getItem('_id')).subscribe((response: any) => {
+
+  getPaymentStatus() {
+    this.http.get("https://volida-be.herokuapp.com/api/payment-status/?_id="+localStorage.getItem('_id')).subscribe((response: any) => {
+      console.log(response.subscriptions)
       if(response.subscriptions.length === 0) {
-        this.router.navigate(['/subscriptions']);
+        this.router.navigate(['']);
       } else {
         this.router.navigate(['/dashboard']);
       }
     })
+  }
+
+  checkPayment() {
+    return this.http.get("https://volida-be.herokuapp.com/api/payment-status/?_id="+localStorage.getItem('_id'))
   }
 
 

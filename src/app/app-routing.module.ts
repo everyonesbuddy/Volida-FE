@@ -6,10 +6,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EventDetailsComponent } from './components/event-details/event-details.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { SettingsPageComponent } from './components/settings-page/settings-page.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { StripeSuccessComponent } from './components/stripe-success/stripe-success.component';
-import { SubscriptionPageComponent } from './components/subscription-page/subscription-page.component';
 import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
@@ -30,11 +28,6 @@ const routes: Routes = [
     component: SignUpComponent
   },
   {
-    path: 'subscriptions',
-    component: SubscriptionPageComponent,
-    canActivate: [AuthGuard]
-  },
-  {
     path: 'stripe/success',
     component: StripeSuccessComponent,
     canActivate: [AuthGuard]
@@ -52,11 +45,6 @@ const routes: Routes = [
   {
     path: 'recentStreamPage/:id',
     component: RecentStreamDetailsComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'settings',
-    component: SettingsPageComponent,
     canActivate: [AuthGuard]
   }
 ];

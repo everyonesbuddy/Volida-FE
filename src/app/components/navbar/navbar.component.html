@@ -19,9 +19,6 @@
             <a href="#" class="nav-link" routerLink="/dashboard">Dashboard</a>
           </li>
           <li *ngIf="userIsAuthenticated" class="nav-item">
-            <a href="#" class="nav-link" routerLink="/settings">Settings</a>
-          </li>
-          <li *ngIf="userIsAuthenticated" class="nav-item">
             <a href="#" class="nav-link" (click)="onLogout()">Logout</a>
           </li>
         </ul>
