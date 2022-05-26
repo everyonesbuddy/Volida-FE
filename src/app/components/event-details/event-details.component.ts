@@ -28,7 +28,7 @@ export class EventDetailsComponent implements OnInit {
               console.log(res.subscriptions);
               res.subscriptions.forEach((val:any)=>{
                 if(!this.hideVideolink){
-                  this.hideVideolink = (val.amount == this.amountInCents);
+                  this.hideVideolink = (val.amount == this.amountInCents && val.amount_received == this.amountInCents);
                 }
               })
               return res.subscriptions;
