@@ -23,7 +23,6 @@ export class SubscriptionService {
 
   getPaymentStatus() {
     this.http.get("https://volida-be.herokuapp.com/api/payment-status/?_id="+localStorage.getItem('_id')).subscribe((response: any) => {
-      console.log(response.subscriptions)
       if(response.subscriptions.length === 0) {
         this.router.navigate(['']);
       } else {

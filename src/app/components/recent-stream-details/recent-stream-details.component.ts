@@ -22,10 +22,8 @@ export class RecentStreamDetailsComponent implements OnInit {
         this.recentStreamService.getRecentLiveStreams(id)
           .then(recentStreams => {
             this.recentStream = recentStreams;
-            console.log(this.recentStream)
             this.amountInCents = recentStreams.fields.amountInCents
              this.checkPayment().subscribe((res:any)=>{
-              console.log(res.subscriptions);
               res.subscriptions.forEach((val:any)=>{
                 if(!this.hideVideolink){
                   this.hideVideolink = (val.amount == this.amountInCents && val.amount_received == this.amountInCents);

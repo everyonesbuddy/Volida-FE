@@ -22,10 +22,8 @@ export class EventDetailsComponent implements OnInit {
         this.eventService.getEvent(id)
           .then(events => {
             this.event = events;
-            console.log(this.event)
             this.amountInCents = events.fields.amountInCents
              this.checkPayment().subscribe((res:any)=>{
-              console.log(res.subscriptions);
               res.subscriptions.forEach((val:any)=>{
                 if(!this.hideVideolink){
                   this.hideVideolink = (val.amount == this.amountInCents && val.amount_received == this.amountInCents);
