@@ -3,8 +3,7 @@ import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { AuthData } from '../models/auth-data-model';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import * as CryptoJS from 'crypto-js'; 
+import { ToastrService } from 'ngx-toastr'; 
 import { NgxSpinnerService } from "ngx-spinner";
 
 @Injectable({
@@ -29,19 +28,6 @@ export class AuthService {
 
   getIsAuth() {
     return this.isAuthenticated;
-  }
-
-  encryptUsingAES256(request:any) {
-    let _key = CryptoJS.enc.Utf8.parse(this.tokenFromUI);
-    let _iv = CryptoJS.enc.Utf8.parse(this.tokenFromUI);
-    let encrypted = CryptoJS.AES.encrypt(
-      JSON.stringify(request), _key, {
-        keySize: 16,
-        iv: _iv,
-        mode: CryptoJS.mode.ECB,
-        padding: CryptoJS.pad.Pkcs7
-      });
-    return encrypted.toString();
   }
 
   createUser(firstName: string, lastName: string, email: string, password: string) {
@@ -72,7 +58,7 @@ export class AuthService {
 
   login(email: string, password: string){
     this.spinner.show();
-    const authData: AuthData = {email: email, password: this.encryptUsingAES256(password)};
+    const authData: AuthData = {email: email, password: password};
     this.http.post<{token: string, expiresIn: number, auth: any, error: any}>("https://volida-be.herokuapp.com/api/login", authData).subscribe(response => {
       this.spinner.hide();
       if(response.token) {
