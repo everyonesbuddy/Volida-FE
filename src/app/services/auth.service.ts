@@ -3,7 +3,8 @@ import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { AuthData } from '../models/auth-data-model';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr'; 
+import { ToastrService } from 'ngx-toastr';
+import * as CryptoJS from 'crypto-js';  
 import { NgxSpinnerService } from "ngx-spinner";
 
 @Injectable({
