@@ -30,9 +30,22 @@ export class AuthService {
     return this.isAuthenticated;
   }
 
+  encryptUsingAES256(request:any) {
+    let _key = CryptoJS.enc.Utf8.parse(this.tokenFromUI);
+    let _iv = CryptoJS.enc.Utf8.parse(this.tokenFromUI);
+    let encrypted = CryptoJS.AES.encrypt(
+      JSON.stringify(request), _key, {
+        keySize: 16,
+        iv: _iv,
+        mode: CryptoJS.mode.ECB,
+        padding: CryptoJS.pad.Pkcs7
+      });
+    return encrypted.toString();
+  }
+
   createUser(firstName: string, lastName: string, email: string, password: string) {
     this.spinner.show();
-    const authData: AuthData = {firstName: firstName, lastName: lastName, email: email, password: password};
+    const authData: AuthData = {firstName: firstName, lastName: lastName, email: email, password: this.encryptUsingAES256(password)};
     this.http.post<{token: string, expiresIn: number, auth: any, error: any}>("https://volida-be.herokuapp.com/api/register", authData).subscribe(response => {
       this.spinner.hide();
       if(response.token) {
