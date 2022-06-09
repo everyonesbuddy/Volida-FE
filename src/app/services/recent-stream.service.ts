@@ -21,7 +21,7 @@ export class RecentStreamService {
     }, query))
       .then(res => res.items)
   }
-//random comment
+
   getRecentLiveStreams(recentStreamId: any): Promise<Entry<any>> {
     return this.client.getEntries(Object.assign({
     content_type: environment.contentfulVolidaRewatchEvents.contentTypeIds.product
