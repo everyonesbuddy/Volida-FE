@@ -19,38 +19,20 @@ export class EventDetailsComponent implements OnInit {
     this.activatedRoute.params.subscribe(
       params => {
         let id = params['id'];
-        this.eventService.getEvent(id).subscribe(events => {
+        this.eventService.getEvent(id)
+          .then(events => {
             this.event = events;
-            this.amountInCents = this.event.fields.amountInCents
-            this.hideVideolink = this.event.fields.hideVideolink;
-             /*this.checkPayment().subscribe((res:any)=>{
-              console.log("sdasdad----"+res);
+            this.amountInCents = events.fields.amountInCents
+             this.checkPayment().subscribe((res:any)=>{
               res.subscriptions.forEach((val:any)=>{
                 if(!this.hideVideolink){
-                  this.hideVideolink = (val.amount == this.amountInCents && val.amount_received == this.amountInCents);                
+                  this.hideVideolink = (val.amount == this.amountInCents && val.amount_received == this.amountInCents);
                 }
               })
               return res.subscriptions;
-            })*/
+            })
           });
       })
-    // this.activatedRoute.params.subscribe(
-    //   params => {
-    //     let id = params['id'];
-    //     this.eventService.getEvent(id)
-    //       .then(events => {
-    //         this.event = events;
-    //         this.amountInCents = events.fields.amountInCents
-    //          this.checkPayment().subscribe((res:any)=>{
-    //           res.subscriptions.forEach((val:any)=>{
-    //             if(!this.hideVideolink){
-    //               this.hideVideolink = (val.amount == this.amountInCents && val.amount_received == this.amountInCents);
-    //             }
-    //           })
-    //           return res.subscriptions;
-    //         })
-    //       });
-    //   })
     }
 
   onPayment(id: any) {
