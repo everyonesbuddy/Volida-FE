@@ -36,14 +36,14 @@
                                 <h4>About this Event</h4>
                                 {{recentStream.fields.description}}
                             </li>
-                            <li class="video" *ngIf="!hideVideolink">
+                            <li class="video" *ngIf="hideVideolink">
                                 <h4>Video</h4>
                                 <ul class="list-unstyled">
                                   <iframe [src]="recentStream.fields.videoUrl | safeurl" frameborder="0" width="100%" height="600" allowfullscreen></iframe>
                                 </ul>
                             </li>
                         </ul>
-                        <button class="btn btn-block purchaseBtn" (click)="onPayment(recentStream.fields.stripePriceId)" *ngIf="hideVideolink">Buy On-Demand ${{recentStream.fields.amountInCents / 100}}<small> USD </small></button>
+                        <button class="btn btn-block purchaseBtn" (click)="onPayment(recentStream.fields.stripePriceId)" *ngIf="!hideVideolink">Buy On-Demand ${{recentStream.fields.amountInCents / 100}}<small> USD </small></button>
                     </div>                                                
                 </div>    
             </div>        
