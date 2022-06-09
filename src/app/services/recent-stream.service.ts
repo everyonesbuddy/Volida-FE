@@ -22,10 +22,7 @@ export class RecentStreamService {
       .then(res => res.items)
   }
 
-  getRecentLiveStreams(recentStreamId: any): Promise<Entry<any>> {
-    return this.client.getEntries(Object.assign({
-    content_type: environment.contentfulVolidaRewatchEvents.contentTypeIds.product
-    }, {'sys.id': recentStreamId}))
-    .then(res =>  res.items[0]);
+  getRecentLiveStreams(recentStreamId: any) {
+    return this.http.post<{token: string, expiresIn: number, auth: any, error: any}>("http://volida-be.herokuapp.com/api/recentLiveStreams", {id:recentStreamId, paymentId:localStorage.getItem('_id')});
   }
 }

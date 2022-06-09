@@ -34,20 +34,20 @@
   
               <div class="row profile-content">
                   <div class="col-xs-12 col-sm-12 col-md-12 profile-detail-div">
-                    
                       <ul class="list-unstyled profile-detail-ul">
                           <li class="biography">
                               <h4>About this event</h4>
                               {{event.fields.description}}
                           </li>
-                          <li class="video" *ngIf="hideVideolink">
+
+                          <li class="video" *ngIf="!hideVideolink">
                               <h4>Live Stream</h4>
                               <ul class="list-unstyled">
                                 <iframe [src]="event.fields.liveStreamLink | safeurl" frameborder="0" width="100%" height="600" allowfullscreen></iframe>
                               </ul>
                           </li>
                       </ul>
-                      <button class="btn btn-block purchaseBtn" (click)="onPayment(event.fields.stripePriceId)" *ngIf="!hideVideolink">Buy Livestream ${{event.fields.amountInCents / 100}}<small> USD </small></button>
+                      <button class="btn btn-block purchaseBtn" (click)="onPayment(event.fields.stripePriceId)" *ngIf="hideVideolink">Buy Livestream ${{event.fields.amountInCents / 100}}<small> USD </small></button>
                   </div>                                                
               </div>    
           </div>        

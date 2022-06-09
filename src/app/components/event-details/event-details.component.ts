@@ -19,18 +19,10 @@ export class EventDetailsComponent implements OnInit {
     this.activatedRoute.params.subscribe(
       params => {
         let id = params['id'];
-        this.eventService.getEvent(id)
-          .then(events => {
+        this.eventService.getEvent(id).subscribe(events => {
             this.event = events;
-            this.amountInCents = events.fields.amountInCents
-             this.checkPayment().subscribe((res:any)=>{
-              res.subscriptions.forEach((val:any)=>{
-                if(!this.hideVideolink){
-                  this.hideVideolink = (val.amount == this.amountInCents && val.amount_received == this.amountInCents);
-                }
-              })
-              return res.subscriptions;
-            })
+            this.amountInCents = this.event.fields.amountInCents
+            this.hideVideolink = this.event.fields.hideVideolink;
           });
       })
     }
