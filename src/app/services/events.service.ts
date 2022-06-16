@@ -23,11 +23,10 @@ export class EventsService {
       .then(res => res.items)
   }
 
-  getEvent(eventId: any) {
-    // return this.client.getEntries(Object.assign({
-    // content_type: environment.contentfulVolidaEvents.contentTypeIds.product
-    // }, {'sys.id': eventId}))
-    // .then(res =>  res.items[0]);
-    return this.http.post<{token: string, expiresIn: number, auth: any, error: any}>("https://volida-be.herokuapp.com/api/get-event", {id:eventId, paymentId:localStorage.getItem('_id')});
+  getEvent(eventId: any): Promise<Entry<any>>{
+    return this.client.getEntries(Object.assign({
+    content_type: environment.contentfulVolidaEvents.contentTypeIds.product
+    }, {'sys.id': eventId}))
+    .then(res =>  res.items[0]);
   }
 }
