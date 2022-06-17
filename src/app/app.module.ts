@@ -23,6 +23,7 @@ import { RecentStreamDetailsComponent } from './components/recent-stream-details
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { FaqComponent } from './components/faq/faq.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     EventDetailsComponent,
     SafeurlPipe,
     RecentStreamDetailsComponent,
+    FaqComponent,
 
   ],
   imports: [

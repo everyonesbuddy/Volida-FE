@@ -9,6 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { StripeSuccessComponent } from './components/stripe-success/stripe-success.component';
 import { AuthGuard } from './guard/auth.guard';
+import { FaqComponent } from './components/faq/faq.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'support',
+    component: FaqComponent
   },
   {
     path: 'login',
