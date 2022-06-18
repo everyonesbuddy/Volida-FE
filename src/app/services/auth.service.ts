@@ -33,7 +33,7 @@ export class AuthService {
   createUser(firstName: string, lastName: string, email: string, password: string) {
     this.spinner.show();
     const authData: AuthData = {firstName: firstName, lastName: lastName, email: email, password: password};
-    this.http.post<{token: string, expiresIn: number, auth: any, error: any}>("/api/register", authData).subscribe(response => {
+    this.http.post<{token: string, expiresIn: number, auth: any, error: any}>("https://volida-be.herokuapp.com/api/register", authData).subscribe(response => {
       this.spinner.hide();
       if(response.token) {
         this.toastr.success('Account Created Successfully')
@@ -59,7 +59,7 @@ export class AuthService {
   login(email: string, password: string){
     this.spinner.show();
     const authData: AuthData = {email: email, password: password};
-    this.http.post<{token: string, expiresIn: number, auth: any, error: any}>("api/login", authData).subscribe(response => {
+    this.http.post<{token: string, expiresIn: number, auth: any, error: any}>("https://volida-be.herokuapp.com/api/login", authData).subscribe(response => {
       this.spinner.hide();
       if(response.token) {
         this.toastr.success('Successfully Logged In')
