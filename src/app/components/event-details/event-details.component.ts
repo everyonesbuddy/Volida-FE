@@ -18,19 +18,28 @@ export class EventDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
       params => {
+        console.log(params['id']);
         let id = params['id'];
-        this.eventService.getEvent(id)
-          .then(events => {
+        this.eventService.getEvent(id).subscribe(events => {
             this.event = events;
-            this.amountInCents = events.fields.amountInCents
-             this.checkPayment().subscribe((res:any)=>{
-              res.subscriptions.forEach((val:any)=>{
-                if(!this.hideVideolink){
-                  this.hideVideolink = (val.amount == this.amountInCents && val.amount_received == this.amountInCents);
-                }
-              })
-              return res.subscriptions;
-            })
+            console.log(this.event)
+
+            this.amountInCents = this.event.fields.amountInCents
+            console.log(this.amountInCents)
+            this.hideVideolink = this.event.fields.hideVideolink;
+        // let id = params['id'];
+        // this.eventService.getEvent(id)
+        //   .then(events => {
+        //     this.event = events;
+        //     this.amountInCents = events.fields.amountInCents
+        //      this.checkPayment().subscribe((res:any)=>{
+        //       res.subscriptions.forEach((val:any)=>{
+        //         if(!this.hideVideolink){
+        //           this.hideVideolink = (val.amount == this.amountInCents && val.amount_received == this.amountInCents);
+        //         }
+        //       })
+        //       return res.subscriptions;
+        //     })
           });
       })
     }
