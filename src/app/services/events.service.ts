@@ -24,7 +24,7 @@ export class EventsService {
   }
 
   getEvent(eventId: any) {//: Promise<Entry<any>>{
-    return this.http.post<{token: string, expiresIn: number, auth: any, error: any}>("ttps://volida-be.herokuapp.com/api/getEvent", {id:eventId, paymentId:localStorage.getItem('_id')});
+    return this.http.post<{token: string, expiresIn: number, auth: any, error: any}>("https://volida-be.herokuapp.com/api/getEvent", {id:eventId, paymentId:localStorage.getItem('_id')});
     // return this.client.getEntries(Object.assign({
     // content_type: environment.contentfulVolidaEvents.contentTypeIds.product
     // }, {'sys.id': eventId}))
