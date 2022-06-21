@@ -19,18 +19,23 @@ export class RecentStreamDetailsComponent implements OnInit {
     this.activatedRoute.params.subscribe(
       params => {
         let id = params['id'];
-        this.recentStreamService.getRecentLiveStreams(id)
-          .then(recentStreams => {
-            this.recentStream = recentStreams;
-            this.amountInCents = recentStreams.fields.amountInCents
-             this.checkPayment().subscribe((res:any)=>{
-              res.subscriptions.forEach((val:any)=>{
-                if(!this.hideVideolink){
-                  this.hideVideolink = (val.amount == this.amountInCents && val.amount_received == this.amountInCents);
-                }
-              })
-              return res.subscriptions;
-            })
+        this.recentStreamService.getRecentLiveStreamDetails(id).subscribe(events => {
+            this.recentStream = events;
+            this.amountInCents = this.recentStream.fields.amountInCents
+            this.hideVideolink = this.recentStream.fields.hideVideolink;
+        // let id = params['id'];
+        // this.recentStreamService.getRecentLiveStreams(id)
+        //   .then(recentStreams => {
+        //     this.recentStream = recentStreams;
+        //     this.amountInCents = recentStreams.fields.amountInCents
+        //      this.checkPayment().subscribe((res:any)=>{
+        //       res.subscriptions.forEach((val:any)=>{
+        //         if(!this.hideVideolink){
+        //           this.hideVideolink = (val.amount == this.amountInCents && val.amount_received == this.amountInCents);
+        //         }
+        //       })
+        //       return res.subscriptions;
+        //     })
           });
     })
   }

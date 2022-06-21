@@ -18,14 +18,10 @@ export class EventDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
       params => {
-        console.log(params['id']);
         let id = params['id'];
-        this.eventService.getEvent(id).subscribe(events => {
+        this.eventService.getEventDetails(id).subscribe(events => {
             this.event = events;
-            console.log(this.event)
-
             this.amountInCents = this.event.fields.amountInCents
-            console.log(this.amountInCents)
             this.hideVideolink = this.event.fields.hideVideolink;
         // let id = params['id'];
         // this.eventService.getEvent(id)
