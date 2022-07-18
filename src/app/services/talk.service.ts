@@ -13,7 +13,8 @@ export class TalkService {
     await Talk.ready;
     return new Talk.User({
       id: applicationUser.id,
-      name: applicationUser.username
+      name: applicationUser.username,
+      role: applicationUser.role
     });
   }
 
@@ -23,6 +24,7 @@ export class TalkService {
       id: 1,
       username: 'Volida',
       email: 'info@volida.io',
+      role: 'default'
     };
     this.currentUser = await this.createUser(user);
     const session = new Talk.Session({
