@@ -20,9 +20,9 @@ export class TalkService {
   async createCurrentSession() {
     await Talk.ready;
     const user = {
-      id: 1,
+      id: 2,
       username: 'Volida',
-      email: 'info@volida.io',
+      email: 'j_adeyemo@yahoo.com',
     };
     this.currentUser = await this.createUser(user);
     const session = new Talk.Session({

@@ -58,6 +58,6 @@ export class EventDetailsComponent implements OnInit {
   private async createInbox() {
     const session = await this.talkService.createCurrentSession();
     this.inbox = await this.talkService.createInbox(session);
-    this.inbox.mount(this.talkjsContainer!.nativeElement);
+    this.inbox.mount(this.talkjsContainer.nativeElement);
   }
 }
