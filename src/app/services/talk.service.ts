@@ -23,7 +23,6 @@ export class TalkService {
       id: 1,
       username: 'Volida',
       email: 'info@volida.io',
-      role: 'default'
     };
     this.currentUser = await this.createUser(user);
     const session = new Talk.Session({
