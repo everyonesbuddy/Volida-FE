@@ -34,43 +34,24 @@
 
               <div class="row profile-content">
                   <div class="col-xs-12 col-sm-12 col-md-12 profile-detail-div">
-
-                      <ul class="list-unstyled profile-detail-ul">
-                          <li class="biography">
-                              <h4>About this event</h4>
-                              {{event.fields.description}}
-                          </li>
-                          <li class="video" *ngIf="hideVideolink">
+                      <h4>About this event</h4>
+                      {{event.fields.description}}
+                      <div class="list-unstyled profile-detail-ul">
+                          <div class="video" *ngIf="hideVideolink">
                               <h4>Live Stream</h4>
-                              <ul class="list-unstyled">
-                                <iframe [src]="event.fields.liveStreamLink | safeurl" frameborder="0" width="100%" height="600" allowfullscreen></iframe>
-                              </ul>
-                          </li>
-                      </ul>
+                              <div class="video-cols">
+                                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 float-left">
+                                  <iframe [src]="event.fields.liveStreamLink | safeurl" frameborder="0" width="100%" height="600" allowfullscreen></iframe>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 float-left" #talkjsContainer style=" height: 600px; ">Loading...</div>
+                              </div>
+                            </div>
+                        </div>
                       <button class="btn btn-block purchaseBtn" (click)="onPayment(event.fields.stripePriceId)" *ngIf="!hideVideolink">Buy Livestream ${{event.fields.amountInCents / 100}}<small> USD </small></button>
                   </div>
               </div>
           </div>
       </div>
   </div>
-
-  <!-- Modal -->
-  <!-- <div class="modal fade" id="requestBookModal" tabindex="-1" role="dialog" aria-labelledby="requestBookModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content" *ngIf="event.fields">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">{{event.fields.title}} QR Code</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="event-img-container" >
-            <img class="responsive" src="{{event.fields.qrCode.fields.file.url}}" alt="">
-        </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
 </div>
 <app-footer></app-footer>

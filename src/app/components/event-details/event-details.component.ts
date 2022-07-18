@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EventsService } from 'src/app/services/events.service';
 import { SubscriptionService } from 'src/app/services/subscription.service';
+import { TalkService } from 'src/app/services/talk.service';
+import Talk from 'talkjs';
 
 @Component({
   selector: 'app-event-details',
@@ -12,8 +14,11 @@ export class EventDetailsComponent implements OnInit {
   event:any = [];
   amountInCents: any = '';
   hideVideolink: boolean = false;
+  private inbox: Talk.Inbox | any;
 
-  constructor(private subscriptionService: SubscriptionService, private eventService: EventsService, private activatedRoute: ActivatedRoute) { }
+  @ViewChild('talkjsContainer') talkjsContainer!: ElementRef;
+
+  constructor(private subscriptionService: SubscriptionService, private eventService: EventsService, private activatedRoute: ActivatedRoute, private talkService: TalkService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
@@ -38,6 +43,7 @@ export class EventDetailsComponent implements OnInit {
             })
           });
       })
+      this.createInbox();
     }
 
   onPayment(id: any) {
@@ -48,5 +54,9 @@ export class EventDetailsComponent implements OnInit {
     return this.subscriptionService.checkPayment();
   }
 
-
+  private async createInbox() {
+    const session = await this.talkService.createCurrentSession();
+    this.inbox = await this.talkService.createInbox(session);
+    this.inbox.mount(this.talkjsContainer.nativeElement);
+  }
 }
