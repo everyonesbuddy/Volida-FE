@@ -33,7 +33,7 @@ export class TalkService {
   }
 
   async createInbox(session: Talk.Session) {
-    const conversation = session.getOrCreateConversation('my_conversation_id');
+    const conversation = session.getOrCreateConversation('my_conversation');
     conversation.setAttributes({
       photoUrl: "https://demo.talkjs.com/img/11.jpg",
       subject: "Stream Chat"

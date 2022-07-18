@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EventsService } from 'src/app/services/events.service';
 import { SubscriptionService } from 'src/app/services/subscription.service';
@@ -15,6 +15,7 @@ export class EventDetailsComponent implements OnInit {
   amountInCents: any = '';
   hideVideolink: boolean = false;
   private inbox: Talk.Inbox | any;
+  private session: Talk.Session | any;
 
   @ViewChild('talkjsContainer') talkjsContainer!: ElementRef;
 
