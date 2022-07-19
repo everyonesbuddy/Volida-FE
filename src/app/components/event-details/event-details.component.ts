@@ -61,6 +61,6 @@ export class EventDetailsComponent implements OnInit {
     // this.inbox.mount(this.talkjsContainer.nativeElement);
     setTimeout(function(thisobj:any){
       thisobj.inbox.mount(thisobj.talkjsContainer.nativeElement);
-    },1000, this);
+    },3000, this);
   }
 }
