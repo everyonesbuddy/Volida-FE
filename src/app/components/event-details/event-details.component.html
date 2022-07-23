@@ -34,7 +34,7 @@
                       <h4>About this event</h4>
                       {{event.fields.description}}
                       <div class="list-unstyled profile-detail-ul">
-                          <div class="video" *ngIf="!hideVideolink">
+                          <div class="video" *ngIf="hideVideolink">
                               <h4>Live Stream</h4>
                               <div class="video-cols">
                                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 float-left">
@@ -44,7 +44,7 @@
                               </div>
                             </div>
                         </div>
-                      <button class="btn btn-block purchaseBtn" (click)="onPayment(event.fields.stripePriceId)" *ngIf="hideVideolink">Buy Livestream ${{event.fields.amountInCents / 100}}<small> USD </small></button>
+                      <button class="btn btn-block purchaseBtn" (click)="onPayment(event.fields.stripePriceId)" *ngIf="!hideVideolink">Buy Livestream ${{event.fields.amountInCents / 100}}<small> USD </small></button>
                   </div>
               </div>
           </div>
