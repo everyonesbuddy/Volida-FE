@@ -93,10 +93,6 @@ button {
     height: 172px;
     color: #fff;
     text-align: center;
-    img {
-      max-width: 100%;
-      height: auto;
-    }
   }
 
   &-thumbnail {
@@ -106,6 +102,8 @@ button {
     right: 0;
     margin: 0 auto;
     height: 172px;
+    max-width: 100%;
+    height: auto;
   }
 
   &-description {
