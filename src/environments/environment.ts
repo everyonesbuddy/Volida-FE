@@ -13,10 +13,17 @@ export const environment = {
    },
   },
   contentfulVolidaRewatchEvents: {
-    spaceId: 'dt4p1vme6bp9', 
+    spaceId: 'dt4p1vme6bp9',
     token: 'OezF74wr2ytWNKCJLFczt8ZcvzqkLIMQzDgzswiIxNw',
     contentTypeIds: {
      product: 'volidaComedySpecials',
+   },
+  },
+  contentfulVolidaFeaturedActs: {
+    spaceId: 'dt4p1vme6bp9',
+    token: 'w_bDMvADRPGSg-yWXVjfEwQUaYwjtaGE0X_JqZTs1pw',
+    contentTypeIds: {
+     product: 'volidaFeaturedActs',
    },
   }
 };

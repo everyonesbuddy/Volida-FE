@@ -1,9 +1,9 @@
 <div class="list">
   <div class="list-banner">
-      <img 
+      <img
           class="list-banner-img"
-          src="../../../assets/comedy1.jpg" 
-          alt="background image" 
+          src="../../../assets/comedy1.jpg"
+          alt="background image"
       />
   </div>
   <div class="list-content">
@@ -23,7 +23,7 @@
             <div *ngFor="let event of events">
                 <div class="event" (click)="detailPage(event.sys.id)">
                     <div class="event-thumb-container">
-                        <img 
+                        <img
                             src="{{event.fields.image.fields.file.url}}"
                             alt="thumbnail"
                             class="event-thumbnail"
@@ -39,14 +39,14 @@
     </div>
   </div>
 
-  <!--list of comedy specials-->
+  <!--list of On Demand And Recent Live Streams-->
   <div class="events-container">
     <h4 class="event-header-title">Recent Live Streams & On-Demand Content</h4>
     <div class="events">
             <div *ngFor="let stream of recentStreams">
                 <div class="event" (click)="recentStreamDetailPage(stream.sys.id)">
                     <div class="event-thumb-container">
-                        <img 
+                        <img
                             src="{{stream.fields.image.fields.file.url}}"
                             alt="thumbnail"
                             class="event-thumbnail"
@@ -56,6 +56,27 @@
                         <p class="event-name">{{stream.fields.title}}</p>
                         <p class="event-name">CAST: {{stream.fields.cast}}</p>
                         <p class="event-name">DIRECTOR: {{stream.fields.director}}</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+  </div>
+
+  <!--list of On Featured Acts-->
+  <div class="events-container">
+    <h4 class="event-header-title">Recent Live Streams & On-Demand Content</h4>
+    <div class="events">
+            <div *ngFor="let act of featuredActs">
+                <div class="event">
+                    <div class="event-thumb-container">
+                        <img
+                            src="{{act.fields.image.fields.file.url}}"
+                            alt="thumbnail"
+                            class="event-thumbnail"
+                        />
+                    </div>
+                    <div class="event-description">
+                        <p class="event-name">{{act.fields.title}}</p>
                     </div>
                 </div>
             </div>
