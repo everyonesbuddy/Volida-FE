@@ -1,6 +1,6 @@
 .list {
   width: 100%;
-  
+
   &-banner {
     height: 70vh;
     overflow: hidden;
@@ -90,7 +90,7 @@ button {
   &-thumb-container {
     background-color: #000;
     position: relative;
-    height: 172px;
+    height: 200px;
     color: #fff;
     text-align: center;
   }
@@ -148,25 +148,25 @@ button {
     &-banner {
       height: 70vh;
       overflow: hidden;
-  
+
       &-img {
         width: 100%;
         filter: blur(2px);
       }
     }
-  
+
     &-content {
       text-align: center;
       position: relative;
       top: -350px;
     }
-  
+
     &-header {
       &-title {
         font-size: 2.0rem;
         line-height: 1;
       }
-  
+
       &-subtitle {
         font-size: 0.6rem;
         line-height: 1;
