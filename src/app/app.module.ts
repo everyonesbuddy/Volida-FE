@@ -24,6 +24,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { FaqComponent } from './components/faq/faq.component';
+import { ReferAFriendComponent } from './components/refer-a-friend/refer-a-friend.component';
+import { UrlService } from './services/url.service';
 
 
 @NgModule({
@@ -44,6 +46,7 @@ import { FaqComponent } from './components/faq/faq.component';
     SafeurlPipe,
     RecentStreamDetailsComponent,
     FaqComponent,
+    ReferAFriendComponent,
 
   ],
   imports: [
@@ -60,7 +63,7 @@ import { FaqComponent } from './components/faq/faq.component';
       preventDuplicates: true
     })
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}, UrlService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,6 +10,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { StripeSuccessComponent } from './components/stripe-success/stripe-success.component';
 import { AuthGuard } from './guard/auth.guard';
 import { FaqComponent } from './components/faq/faq.component';
+import { ReferAFriendComponent } from './components/refer-a-friend/refer-a-friend.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignUpComponent
+  },
+  {
+    path: 'referAFriend',
+    component: ReferAFriendComponent
   },
   {
     path: 'stripe/success',
