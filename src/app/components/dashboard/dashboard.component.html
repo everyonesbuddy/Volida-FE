@@ -39,9 +39,9 @@
     </div>
   </div>
 
-  <!--list of On Demand And Recent Live Streams-->
+  <!--Free Shows-->
   <div class="events-container">
-    <h4 class="event-header-title">Recent Live Streams & On-Demand Content</h4>
+    <h4 class="event-header-title">Free Shows</h4>
     <div class="events">
             <div *ngFor="let stream of recentStreams">
                 <div class="event" (click)="recentStreamDetailPage(stream.sys.id)">
@@ -63,7 +63,7 @@
   </div>
 
   <!--list of On Featured Acts-->
-  <div class="events-container">
+  <!-- <div class="events-container">
     <h4 class="event-header-title">Featured Acts</h4>
     <div class="events">
             <div *ngFor="let act of featuredActs">
@@ -83,6 +83,6 @@
                 </div>
             </div>
     </div>
-  </div>
+  </div> -->
 </div>
 <app-footer></app-footer>
