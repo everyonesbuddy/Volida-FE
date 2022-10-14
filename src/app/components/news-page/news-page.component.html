@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <div class="row profile">
+    <div class="row" *ngIf="news.fields">
+      <div class="col-sm-12 col-md-12 col-xs-12">
+        <div class="row profile-header">
+          <div class="col-xs-12 col-sm-8 col-md-8 hidden-xs">
+            <div
+              id="myProfileCarousel"
+              class="carousel slide"
+              data-ride="carousel"
+            >
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <div
+                    class="event-img-container"
+                    class="col-xs-6 col-sm-6 col-md-6"
+                  >
+                    <img
+                      class="responsive"
+                      src="{{ news.fields.image.fields.file.url }}"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4 hidden-xs">
+            <p class="list-unstyled event-name-ul">
+              <span
+                ><h6>Written BY:</h6>
+                {{ news.fields.writtenBy }}</span
+              >
+            </p>
+            <p class="list-unstyled event-name-ul">
+              <span
+                ><h6>DATE:</h6>
+                {{ news.fields.dateAndTime }}</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="row profile-content">
+          <div class="col-xs-12 col-sm-12 col-md-12 profile-detail-div">
+            <ul class="list-unstyled profile-detail-ul">
+              <li class="biography">
+                <h4>{{ news.fields.title }}</h4>
+                {{ news.fields.story }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

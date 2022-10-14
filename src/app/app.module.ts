@@ -22,11 +22,12 @@ import { SafeurlPipe } from './customepipe/safeurl.pipe';
 import { RecentStreamDetailsComponent } from './components/recent-stream-details/recent-stream-details.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxSpinnerModule } from "ngx-spinner";
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { FaqComponent } from './components/faq/faq.component';
 import { ReferAFriendComponent } from './components/refer-a-friend/refer-a-friend.component';
 import { UrlService } from './services/url.service';
-
+import { NewsPageComponent } from './components/news-page/news-page.component';
+import { VolidaFilmsComponent } from './components/volida-films/volida-films.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { UrlService } from './services/url.service';
     RecentStreamDetailsComponent,
     FaqComponent,
     ReferAFriendComponent,
-
+    NewsPageComponent,
+    VolidaFilmsComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,10 +62,13 @@ import { UrlService } from './services/url.service';
     ToastrModule.forRoot({
       timeOut: 1000,
       positionClass: 'toast-bottom-right',
-      preventDuplicates: true
-    })
+      preventDuplicates: true,
+    }),
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}, UrlService],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    UrlService,
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

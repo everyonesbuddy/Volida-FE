@@ -1,32 +1,40 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="container">
-      <a class="navbar-brand" routerLink="/">
-        <img src="../../../assets/Volida(16px).png" alt="logo">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarMain">
-        <ul class="navbar-nav ml-auto">
-          <li *ngIf="!userIsAuthenticated" class="nav-item">
-            <a class="nav-link" routerLink="/signup">Sign Up</a>
-          </li>
-          <li *ngIf="!userIsAuthenticated" class="nav-item">
-            <a class="nav-link" routerLink="/login">Login</a>
-          </li>
-          <li *ngIf="!userIsAuthenticated" class="nav-item">
-            <a class="nav-link" routerLink="/about">About</a>
-          </li>
-          <li *ngIf="userIsAuthenticated" class="nav-item">
-            <a href="#" class="nav-link" routerLink="/dashboard">Dashboard</a>
-          </li>
-          <!-- <li  class="nav-item">
+    <a class="navbar-brand" routerLink="/">
+      <img src="../../../assets/Volida(16px).png" alt="logo" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarMain"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ml-auto">
+        <li *ngIf="!userIsAuthenticated" class="nav-item">
+          <a class="nav-link" routerLink="/volidaFilms">Volida Films</a>
+        </li>
+        <li *ngIf="!userIsAuthenticated" class="nav-item">
+          <a class="nav-link" routerLink="/signup">Sign Up</a>
+        </li>
+        <li *ngIf="!userIsAuthenticated" class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li *ngIf="!userIsAuthenticated" class="nav-item">
+          <a class="nav-link" routerLink="/about">About</a>
+        </li>
+        <li *ngIf="userIsAuthenticated" class="nav-item">
+          <a href="#" class="nav-link" routerLink="/dashboard">Dashboard</a>
+        </li>
+        <!-- <li  class="nav-item">
             <a href="#" class="nav-link" routerLink="/referAFriend">Refer A Friend</a>
           </li> -->
-          <li *ngIf="userIsAuthenticated" class="nav-item">
-            <a href="#" class="nav-link" (click)="onLogout()">Logout</a>
-          </li>
-        </ul>
-      </div>
+        <li *ngIf="userIsAuthenticated" class="nav-item">
+          <a href="#" class="nav-link" (click)="onLogout()">Logout</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

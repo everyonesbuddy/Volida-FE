@@ -10,7 +10,8 @@
   text-align: center;
 }
 
-.footer, .footer a {
+.footer,
+.footer a {
   color: #999;
   font-size: 0.9rem;
 }
@@ -21,7 +22,7 @@
 
 .footer .footer-cols {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid: 2rem;
 }
 
@@ -29,9 +30,8 @@
   line-height: 1.9;
 }
 
-@media(max-width: 960px) {
+@media (max-width: 960px) {
   .footer .footer-cols {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }

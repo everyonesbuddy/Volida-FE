@@ -1,108 +1,34 @@
 <section class="showcase">
   <div class="showcase-content">
-    <h1>Live shows in the comfort of your home</h1>
-    <p>
+    <h1>African News and Entertainment</h1>
+    <!-- <p>
       Get access to the raw, uncut energy of underground music straight to your
       living room, LIVE.
     </p>
-    <button class="btn btn-lg" routerLink="/signup">Try It Now</button>
+    <button class="btn btn-lg" routerLink="/signup">Try It Now</button> -->
   </div>
 </section>
 
-<section class="tabs">
-  <div class="wrapper">
-    <div id="tab-2" class="tab-item tab-border">
-      <i class="fa fa-desktop fa-3x"></i>
-      <p class="hide-sm">How It Works</p>
-    </div>
-  </div>
-</section>
-
-<section class="tab-content">
-  <div class="wrapper">
-    <!--tab content 2-->
-    <div id="tab-2-content" class="tab-content-item">
-      <div class="tab-2-content-top">
-        <p class="text-lg">
-          Volida provides live stream access to underground music concerts
-          anytime, anywhere.
-        </p>
-        <button
-          class="btn btn-lg"
-          data-toggle="modal"
-          data-target="#requestBookModal"
-        >
-          Watch a quick demo
-        </button>
-      </div>
-      <div class="tab-2-content-bottom">
-        <div class="text-center">
-          <h1>1.</h1>
-          <p class="text-md">Create Account</p>
-          <p>
-            Enter your email address and create a password, to get signed up
-          </p>
+<!-- list of Newss -->
+<div class="events-container">
+  <h4 class="event-header-title">Latest News</h4>
+  <div class="events">
+    <div *ngFor="let n of news">
+      <div class="event" (click)="newsPage(n.sys.id)">
+        <div class="event-thumb-container">
+          <img
+            src="{{ n.fields.image.fields.file.url }}"
+            alt="thumbnail"
+            class="event-thumbnail"
+          />
         </div>
-
-        <div class="text-center">
-          <h1>2.</h1>
-          <p class="text-md">Pick A Show</p>
-          <p>
-            Take a few minutes, browse our library of shows, and find a show
-            that intrests you
-          </p>
+        <div class="event-description">
+          <p class="event-name">{{ n.fields.title }}</p>
+          <p class="event-info">Written By: {{ n.fields.writtenBy }}</p>
+          <p class="event-info">Date: {{ n.fields.dateAndTime }}</p>
         </div>
-
-        <div class="text-center">
-          <h1>3.</h1>
-          <p class="text-md">Enjoy</p>
-          <p>You’re all set! sit back and enjoy a truly unforgettable Show!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<app-footer></app-footer>
-
-<!-- Modal -->
-<div
-  class="modal fade"
-  id="requestBookModal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="requestBookModalTitle"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Quick demo video</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <iframe
-          src="https://www.youtube.com/embed/5Okw83K3OD8?autoplay=0"
-          frameborder="0"
-          width="100%"
-          height="400"
-          allowfullscreen
-          controls="0"
-          autoplay="0"
-        ></iframe>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-          Close
-        </button>
       </div>
     </div>
   </div>
 </div>
+<app-footer></app-footer>

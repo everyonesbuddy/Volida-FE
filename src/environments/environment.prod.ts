@@ -23,4 +23,11 @@ export const environment = {
       product: 'volidaFeaturedActs',
     },
   },
+  contentfulVolidaNews: {
+    spaceId: 'dt4p1vme6bp9',
+    token: 'eLild2TUl5z-Sj3dA7FO1lBS8Fm6tZtG8pyHsuXTwcI',
+    contentTypeIds: {
+      product: 'news',
+    },
+  },
 };
