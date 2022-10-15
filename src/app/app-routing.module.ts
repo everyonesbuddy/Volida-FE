@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
-import { RecentStreamDetailsComponent } from './components/recent-stream-details/recent-stream-details.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EventDetailsComponent } from './components/event-details/event-details.component';
 import { HomeComponent } from './components/home/home.component';
@@ -60,11 +59,6 @@ const routes: Routes = [
   {
     path: 'detailPage/:id',
     component: EventDetailsComponent,
-    canActivate: [AuthGuard],
-  },
-  {
-    path: 'recentStreamPage/:id',
-    component: RecentStreamDetailsComponent,
     canActivate: [AuthGuard],
   },
 ];

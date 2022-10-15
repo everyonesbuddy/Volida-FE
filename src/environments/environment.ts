@@ -13,20 +13,6 @@ export const environment = {
       product: 'volidaEvents',
     },
   },
-  contentfulVolidaRewatchEvents: {
-    spaceId: 'dt4p1vme6bp9',
-    token: 'OezF74wr2ytWNKCJLFczt8ZcvzqkLIMQzDgzswiIxNw',
-    contentTypeIds: {
-      product: 'volidaComedySpecials',
-    },
-  },
-  contentfulVolidaFeaturedActs: {
-    spaceId: 'dt4p1vme6bp9',
-    token: 'w_bDMvADRPGSg-yWXVjfEwQUaYwjtaGE0X_JqZTs1pw',
-    contentTypeIds: {
-      product: 'volidaFeaturedActs',
-    },
-  },
   contentfulVolidaNews: {
     spaceId: 'dt4p1vme6bp9',
     token: 'eLild2TUl5z-Sj3dA7FO1lBS8Fm6tZtG8pyHsuXTwcI',

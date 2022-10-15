@@ -19,7 +19,6 @@ import { StripeCancelComponent } from './components/stripe-cancel/stripe-cancel.
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EventDetailsComponent } from './components/event-details/event-details.component';
 import { SafeurlPipe } from './customepipe/safeurl.pipe';
-import { RecentStreamDetailsComponent } from './components/recent-stream-details/recent-stream-details.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -45,7 +44,6 @@ import { VolidaFilmsComponent } from './components/volida-films/volida-films.com
     DashboardComponent,
     EventDetailsComponent,
     SafeurlPipe,
-    RecentStreamDetailsComponent,
     FaqComponent,
     ReferAFriendComponent,
     NewsPageComponent,
