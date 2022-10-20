@@ -23,7 +23,7 @@ const routes: Routes = [
     component: AboutComponent,
   },
   {
-    path: 'volidaFilms',
+    path: 'filmsLivestream',
     component: VolidaFilmsComponent,
   },
   {
