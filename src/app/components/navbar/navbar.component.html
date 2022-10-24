@@ -14,25 +14,23 @@
     <div class="collapse navbar-collapse" id="navbarMain">
       <ul class="navbar-nav ml-auto">
         <li *ngIf="!userIsAuthenticated" class="nav-item">
-          <a class="nav-link" routerLink="/filmsLivestream"
-            >Films & Livestreams</a
-          >
-        </li>
-        <li *ngIf="!userIsAuthenticated" class="nav-item">
           <a class="nav-link" routerLink="/signup">Sign Up</a>
         </li>
         <li *ngIf="!userIsAuthenticated" class="nav-item">
           <a class="nav-link" routerLink="/login">Login</a>
         </li>
-        <li *ngIf="!userIsAuthenticated" class="nav-item">
-          <a class="nav-link" routerLink="/about">About</a>
-        </li>
         <li *ngIf="userIsAuthenticated" class="nav-item">
           <a href="#" class="nav-link" routerLink="/dashboard">Dashboard</a>
         </li>
-        <!-- <li  class="nav-item">
-            <a href="#" class="nav-link" routerLink="/referAFriend">Refer A Friend</a>
-          </li> -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/films">Films</a>
+        </li>
+        <li *ngIf="!userIsAuthenticated" class="nav-item">
+          <a class="nav-link" routerLink="/ppvs">PPVs</a>
+        </li>
+        <li *ngIf="!userIsAuthenticated" class="nav-item">
+          <a class="nav-link" routerLink="/about">About</a>
+        </li>
         <li *ngIf="userIsAuthenticated" class="nav-item">
           <a href="#" class="nav-link" (click)="onLogout()">Logout</a>
         </li>

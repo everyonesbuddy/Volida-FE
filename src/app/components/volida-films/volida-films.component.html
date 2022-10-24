@@ -1,41 +1,44 @@
-<section class="showcase">
-  <div class="showcase-content">
-    <h1>Volida Films & Live Streams</h1>
-    <!-- <p>
-      Volida Films & Livestreams offers original and licensed content of African stories, as well as livestreams of the biggest events in Africa
-    </p> -->
-    <button class="btn btn-lg" routerLink="/signup">Try It Now</button>
+<div class="list">
+  <div class="list-banner">
+    <img
+      class="list-banner-img"
+      src="../../../assets/kal-visuals-Kdy1HaL44TE-unsplash.jpg"
+      alt="background image"
+    />
   </div>
-</section>
-
-<section class="tabs">
-  <div class="wrapper">
-    <div id="tab-1" class="tab-item tab-border">
-      <i class="fa fa-desktop fa-3x"></i>
-      <p class="hide-sm">What is Volida Films & Live Streams?</p>
-    </div>
-  </div>
-</section>
-
-<section class="tab-content">
-  <div class="wrapper">
-    <!--tab content 1-->
-    <div id="tab-1-content" class="tab-content-item show">
-      <div class="tab-1-content-inner">
-        <div>
-          <p class="text-lg">
-            Volida Films & Live streams is a branch of Volida Media, that offers
-            original and licensed content of African stories, as well as live
-            streams of the biggest events in Africa.
-          </p>
-          <button class="btn btn-lg" routerLink="/signup">Get Started</button>
-        </div>
-        <img
-          src="../../../assets/kal-visuals-Kdy1HaL44TE-unsplash.jpg"
-          alt="stream-icon"
-        />
+  <div class="list-content">
+    <div class="list-wrapper">
+      <div class="list-header">
+        <h1 class="list-header-title">Volida Films</h1>
+        <p class="list-header-subtitle">
+          Watch Volida originals and licensed films about Africa stories
+        </p>
       </div>
     </div>
   </div>
-</section>
+  <!-- list of up coming events -->
+  <div class="events-container">
+    <h4 class="event-header-title">Latest Films</h4>
+    <div class="events">
+      <div *ngFor="let film of films">
+        <div class="event" (click)="filmPage(film.sys.id)">
+          <div class="event-thumb-container">
+            <img
+              src="{{ film.fields.image.fields.file.url }}"
+              alt="thumbnail"
+              class="event-thumbnail"
+            />
+          </div>
+          <div class="event-description">
+            <p class="event-name">{{ film.fields.title }}</p>
+            <p class="event-info">Director: {{ film.fields.director }}</p>
+            <p class="event-info">
+              Release Year: {{ film.fields.releaseYear }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <app-footer></app-footer>

@@ -1,0 +1,72 @@
+<div class="wrapper">
+  <div class="row profile">
+    <div class="row" *ngIf="film.fields">
+      <div class="col-sm-12 col-md-12 col-xs-12">
+        <div class="row profile-header">
+          <div class="col-xs-12 col-sm-8 col-md-8 hidden-xs">
+            <div
+              id="myProfileCarousel"
+              class="carousel slide"
+              data-ride="carousel"
+            >
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <div
+                    class="event-img-container"
+                    class="col-xs-6 col-sm-6 col-md-6"
+                  >
+                    <img
+                      class="responsive"
+                      src="{{ film.fields.image.fields.file.url }}"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4 hidden-xs">
+            <p class="list-unstyled event-name-ul">
+              <span>{{ film.fields.title }}</span>
+            </p>
+            <p class="list-unstyled event-name-ul">
+              <span
+                ><h6>DIRECTOR:</h6>
+                {{ film.fields.director }}</span
+              >
+            </p>
+            <p class="list-unstyled event-name-ul">
+              <span
+                ><h6>RELEASE YEAR:</h6>
+                {{ film.fields.releaseYear }}</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="row profile-content">
+          <div class="col-xs-12 col-sm-12 col-md-12 profile-detail-div">
+            <ul class="list-unstyled profile-detail-ul">
+              <li class="biography">
+                <h4>About this Film</h4>
+                {{ film.fields.description }}
+              </li>
+              <li class="video">
+                <h4>Film</h4>
+                <ul class="list-unstyled">
+                  <iframe
+                    [src]="film.fields.filmLink | safeurl"
+                    frameborder="0"
+                    width="100%"
+                    height="600"
+                    allowfullscreen
+                  ></iframe>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

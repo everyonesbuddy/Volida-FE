@@ -20,6 +20,13 @@ export const environment = {
       product: 'news',
     },
   },
+  contentfulVolidaFilms: {
+    spaceId: 'dt4p1vme6bp9',
+    token: 'a5avuDqcJhzqnH63A-L_iTUAMPdEFuSlRggn5Kt2KXw',
+    contentTypeIds: {
+      product: 'volidaFilms',
+    },
+  },
 };
 
 /*

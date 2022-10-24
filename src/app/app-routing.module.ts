@@ -12,6 +12,8 @@ import { FaqComponent } from './components/faq/faq.component';
 import { ReferAFriendComponent } from './components/refer-a-friend/refer-a-friend.component';
 import { NewsPageComponent } from './components/news-page/news-page.component';
 import { VolidaFilmsComponent } from './components/volida-films/volida-films.component';
+import { PpvsComponent } from './components/ppvs/ppvs.component';
+import { FilmPageComponent } from './components/film-page/film-page.component';
 
 const routes: Routes = [
   {
@@ -23,8 +25,12 @@ const routes: Routes = [
     component: AboutComponent,
   },
   {
-    path: 'filmsLivestream',
+    path: 'films',
     component: VolidaFilmsComponent,
+  },
+  {
+    path: 'ppvs',
+    component: PpvsComponent,
   },
   {
     path: 'support',
@@ -55,6 +61,10 @@ const routes: Routes = [
   {
     path: 'newsPage/:id',
     component: NewsPageComponent,
+  },
+  {
+    path: 'filmPage/:id',
+    component: FilmPageComponent,
   },
   {
     path: 'detailPage/:id',

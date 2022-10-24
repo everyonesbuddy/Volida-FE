@@ -27,6 +27,8 @@ import { ReferAFriendComponent } from './components/refer-a-friend/refer-a-frien
 import { UrlService } from './services/url.service';
 import { NewsPageComponent } from './components/news-page/news-page.component';
 import { VolidaFilmsComponent } from './components/volida-films/volida-films.component';
+import { PpvsComponent } from './components/ppvs/ppvs.component';
+import { FilmPageComponent } from './components/film-page/film-page.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { VolidaFilmsComponent } from './components/volida-films/volida-films.com
     ReferAFriendComponent,
     NewsPageComponent,
     VolidaFilmsComponent,
+    PpvsComponent,
+    FilmPageComponent,
   ],
   imports: [
     BrowserModule,
