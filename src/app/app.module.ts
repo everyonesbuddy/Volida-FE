@@ -29,6 +29,7 @@ import { NewsPageComponent } from './components/news-page/news-page.component';
 import { VolidaFilmsComponent } from './components/volida-films/volida-films.component';
 import { PpvsComponent } from './components/ppvs/ppvs.component';
 import { FilmPageComponent } from './components/film-page/film-page.component';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { FilmPageComponent } from './components/film-page/film-page.component';
     HttpClientModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
+    MarkdownModule.forRoot(),
     ToastrModule.forRoot({
       timeOut: 1000,
       positionClass: 'toast-bottom-right',

@@ -47,6 +47,10 @@
               <li class="biography">
                 <h4>{{ news.fields.title }}</h4>
                 <p>{{ news.fields.story }}</p>
+
+                <markdown ngPreserveWhitespaces>
+                  {{ news.fields.story }}
+                </markdown>
               </li>
             </ul>
           </div>
