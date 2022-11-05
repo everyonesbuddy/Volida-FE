@@ -14,6 +14,7 @@ import { NewsPageComponent } from './components/news-page/news-page.component';
 import { VolidaFilmsComponent } from './components/volida-films/volida-films.component';
 import { PpvsComponent } from './components/ppvs/ppvs.component';
 import { FilmPageComponent } from './components/film-page/film-page.component';
+import { NewComponent } from './components/new/new.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'ppvs',
     component: PpvsComponent,
+  },
+  {
+    path: 'news',
+    component: NewComponent,
   },
   {
     path: 'support',

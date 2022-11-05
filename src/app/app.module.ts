@@ -30,6 +30,7 @@ import { VolidaFilmsComponent } from './components/volida-films/volida-films.com
 import { PpvsComponent } from './components/ppvs/ppvs.component';
 import { FilmPageComponent } from './components/film-page/film-page.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { NewComponent } from './components/new/new.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { MarkdownModule } from 'ngx-markdown';
     VolidaFilmsComponent,
     PpvsComponent,
     FilmPageComponent,
+    NewComponent,
   ],
   imports: [
     BrowserModule,
