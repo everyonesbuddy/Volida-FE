@@ -73,7 +73,9 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Quick demo video</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          Click to interact
+        </h5>
         <button
           type="button"
           class="close"
@@ -84,7 +86,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <iframe
+        <!-- <iframe
           src="https://www.youtube.com/embed/5Okw83K3OD8?autoplay=0"
           frameborder="0"
           width="100%"
@@ -92,7 +94,31 @@
           allowfullscreen
           controls="0"
           autoplay="0"
-        ></iframe>
+        ></iframe> -->
+
+        <div
+          style="
+            position: relative;
+            padding-bottom: calc(50.72916666666667% + 40px);
+            height: 0;
+          "
+        >
+          <iframe
+            src="https://demo.arcade.software/w1UBoBRK7S9KdSSH7u4X?embed"
+            frameborder="0"
+            loading="lazy"
+            webkitallowfullscreen
+            mozallowfullscreen
+            allowfullscreen
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            "
+          ></iframe>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">
