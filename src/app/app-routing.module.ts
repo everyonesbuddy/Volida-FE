@@ -59,9 +59,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'dashboard',
+    path: 'events',
     component: DashboardComponent,
-    canActivate: [AuthGuard],
   },
   {
     path: 'newsPage/:id',
