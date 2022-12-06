@@ -1,12 +1,47 @@
-<div class="list">
-  <div class="list-banner">
+<section class="showcase">
+  <div class="showcase-content">
+    <h1>Volida PPV</h1>
+    <p>Live stream the biggest music events from the top entertainers.</p>
+  </div>
+</section>
+
+<section class="tabs">
+  <div class="wrapper">
+    <div id="tab-2">
+      <p>Volida live and upcoming streams</p>
+    </div>
+  </div>
+</section>
+
+<div class="events">
+  <div *ngFor="let event of events">
+    <div class="event" (click)="detailPage(event.sys.id)">
+      <div class="event-thumb-container">
+        <img
+          src="{{ event.fields.image.fields.file.url }}"
+          alt="thumbnail"
+          class="event-thumbnail"
+        />
+      </div>
+      <div class="event-description">
+        <p class="event-name">{{ event.fields.title }}</p>
+        <p class="event-info">{{ event.fields.DateAndTime }}</p>
+        <p class="event-info">{{ event.fields.location }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Demacations-->
+<!-- <div class="list"> -->
+<!-- <div class="list-banner">
     <img
       class="list-banner-img"
       src="../../../assets/concert4.gif"
       alt="background image"
     />
-  </div>
-  <div class="list-content">
+  </div> -->
+<!-- <div class="list-content">
     <div class="list-wrapper">
       <div class="list-header">
         <h1 class="list-header-title">Volida PPV</h1>
@@ -15,9 +50,9 @@
         </p>
       </div>
     </div>
-  </div>
-  <!-- list of up coming events -->
-  <div class="events-container">
+  </div> -->
+<!-- list of up coming events -->
+<!-- <div class="events-container">
     <h4 class="event-header-title">Volida live and upcoming streams</h4>
     <div class="events">
       <div *ngFor="let event of events">
@@ -38,5 +73,5 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <app-footer></app-footer>
