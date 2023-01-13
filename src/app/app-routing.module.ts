@@ -62,6 +62,7 @@ const routes: Routes = [
   {
     path: 'events',
     component: DashboardComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'newsPage/:id',
