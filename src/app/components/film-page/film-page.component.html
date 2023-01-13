@@ -1,6 +1,7 @@
+<!--code without talk js-->
 <div class="wrapper">
   <div class="row profile">
-    <div class="row" *ngIf="film.fields">
+    <div class="row" *ngIf="event.fields">
       <div class="col-sm-12 col-md-12 col-xs-12">
         <div class="row profile-header">
           <div class="col-xs-12 col-sm-8 col-md-8 hidden-xs">
@@ -17,7 +18,7 @@
                   >
                     <img
                       class="responsive"
-                      src="{{ film.fields.image.fields.file.url }}"
+                      src="{{ event.fields.image.fields.file.url }}"
                       alt=""
                     />
                   </div>
@@ -27,18 +28,18 @@
           </div>
           <div class="col-xs-12 col-sm-4 col-md-4 hidden-xs">
             <p class="list-unstyled event-name-ul">
-              <span>{{ film.fields.title }}</span>
+              <span>{{ event.fields.title }}</span>
             </p>
             <p class="list-unstyled event-name-ul">
               <span
-                ><h6>DIRECTOR:</h6>
-                {{ film.fields.director }}</span
+                ><h6>LOCATION:</h6>
+                {{ event.fields.location }}</span
               >
             </p>
             <p class="list-unstyled event-name-ul">
               <span
-                ><h6>RELEASE YEAR:</h6>
-                {{ film.fields.releaseYear }}</span
+                ><h6>DATE AND TIME:</h6>
+                {{ event.fields.DateAndTime }}</span
               >
             </p>
           </div>
@@ -48,14 +49,14 @@
           <div class="col-xs-12 col-sm-12 col-md-12 profile-detail-div">
             <ul class="list-unstyled profile-detail-ul">
               <li class="biography">
-                <h4>About this Film</h4>
-                {{ film.fields.description }}
+                <h4>About this event</h4>
+                {{ event.fields.description }}
               </li>
-              <li class="video">
-                <h4>Film</h4>
+              <li class="video" *ngIf="hideVideolink">
+                <h4>Live Stream</h4>
                 <ul class="list-unstyled">
                   <iframe
-                    [src]="film.fields.filmLink | safeurl"
+                    [src]="event.fields.liveStreamLink | safeurl"
                     frameborder="0"
                     width="100%"
                     height="600"
@@ -64,9 +65,73 @@
                 </ul>
               </li>
             </ul>
+            <button
+              class="btn btn-block purchaseBtn"
+              (click)="onPayment(event.fields.stripePriceId)"
+              *ngIf="!hideVideolink"
+            >
+              Buy Livestream ${{ event.fields.amountInCents / 100
+              }}<small> USD </small>
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!--code with talk js-->
+  <!-- <div class="wrapper">
+  <div class="row profile">
+      <div class="row" *ngIf="event.fields">
+          <div class="col-sm-12 col-md-12 col-xs-12">
+
+              <div class="row profile-header">
+                  <div class="col-xs-12 col-sm-8 col-md-8 hidden-xs">
+
+                      <div id="myProfileCarousel" class="carousel slide" data-ride="carousel">
+                          <div class="carousel-inner" role="listbox">
+                              <div class="item active">
+                                  <div class="event-img-container" class="col-xs-6 col-sm-6 col-md-6">
+                                      <img class="responsive" src="{{event.fields.image.fields.file.url}}" alt="">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  <div class="col-xs-12 col-sm-4 col-md-4 hidden-xs">
+                        <p class="list-unstyled event-name-ul">
+                            <span>{{event.fields.title}}</span>
+                        </p>
+                        <p class="list-unstyled event-name-ul">
+                            <span><h6>LOCATION:</h6> {{event.fields.location}}</span>
+                        </p>
+                        <p class="list-unstyled event-name-ul">
+                             <span><h6>DATE AND TIME:</h6> {{event.fields.DateAndTime}}</span>
+                        </p>
+                  </div>
+              </div>
+
+              <div class="row profile-content">
+                  <div class="col-xs-12 col-sm-12 col-md-12 profile-detail-div">
+                      <h4>About this event</h4>
+                      {{event.fields.description}}
+                      <div class="list-unstyled profile-detail-ul">
+                          <div class="video" *ngIf="hideVideolink">
+                              <h4>Live Stream</h4>
+                              <div class="video-cols">
+                                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 float-left">
+                                  <iframe [src]="event.fields.liveStreamLink | safeurl" frameborder="0" width="100%" height="600" allowfullscreen></iframe>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 float-left" #talkjsContainer style=" height: 600px; ">Loading...</div>
+                              </div>
+                            </div>
+                        </div>
+                      <button class="btn btn-block purchaseBtn" (click)="onPayment(event.fields.stripePriceId)" *ngIf="!hideVideolink">Buy Livestream ${{event.fields.amountInCents / 100}}<small> USD </small></button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div> -->
+  <!-- <app-footer></app-footer> -->
 </div>
