@@ -28,6 +28,7 @@ const routes: Routes = [
   {
     path: 'films',
     component: VolidaFilmsComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'ppvs',

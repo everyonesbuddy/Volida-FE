@@ -9,14 +9,14 @@ import { FilmsService } from 'src/app/services/films.service';
   styleUrls: ['./volida-films.component.scss'],
 })
 export class VolidaFilmsComponent implements OnInit {
-  films: Entry<any>[] = [];
+  events: Entry<any>[] = [];
 
   constructor(private filmsService: FilmsService, private router: Router) {}
 
   ngOnInit(): void {
     //get all films
-    this.filmsService.getAllFilms().then((films) => {
-      this.films = films;
+    this.filmsService.getAllEvents().then((events) => {
+      this.events = events;
     });
   }
 

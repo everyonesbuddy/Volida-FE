@@ -14,7 +14,7 @@ export class FilmsService {
 
   constructor(private http: HttpClient) {}
 
-  getAllFilms(query?: object): Promise<Entry<any>[]> {
+  getAllEvents(query?: object): Promise<Entry<any>[]> {
     return this.client
       .getEntries(
         Object.assign(
@@ -28,7 +28,7 @@ export class FilmsService {
       .then((res) => res.items);
   }
 
-  getFilm(filmId: any): Promise<Entry<any>> {
+  getEvent(eventId: any): Promise<Entry<any>> {
     // return this.http.post<{token: string, expiresIn: number, auth: any, error: any}>("https://volida-be.herokuapp.com/api/get-event-details", {id:eventId, userId:localStorage.getItem('_id')});
     return this.client
       .getEntries(
@@ -37,7 +37,7 @@ export class FilmsService {
             content_type:
               environment.contentfulVolidaFilms.contentTypeIds.product,
           },
-          { 'sys.id': filmId }
+          { 'sys.id': eventId }
         )
       )
       .then((res) => res.items[0]);
