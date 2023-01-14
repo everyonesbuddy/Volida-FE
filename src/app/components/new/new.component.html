@@ -1,31 +1,10 @@
 <section class="showcase">
   <div class="showcase-content">
-    <h1>Volida</h1>
-    <p>The latest news on music and entertainment</p>
-    <!-- <button class="btn btn-lg" routerLink="/signup">Try It Now</button> -->
+    <h1>Thank you for paying you can start streaming.</h1>
+    <!-- <p>
+      Volida provides you with live events in real time, so you never miss a
+      show again.
+    </p> -->
+    <!-- <button class="btn btn-lg" routerLink="/events">Watch Now</button> -->
   </div>
 </section>
-
-<!-- list of Newss -->
-<div class="events-container">
-  <h4 class="event-header-title">Latest News</h4>
-  <div class="events">
-    <div *ngFor="let n of news">
-      <div class="event" (click)="newsPage(n.sys.id)">
-        <div class="event-thumb-container">
-          <img
-            src="{{ n.fields.image.fields.file.url }}"
-            alt="thumbnail"
-            class="event-thumbnail"
-          />
-        </div>
-        <div class="event-description">
-          <p class="event-name">{{ n.fields.title }}</p>
-          <p class="event-info">Written By: {{ n.fields.writtenBy }}</p>
-          <p class="event-info">Date: {{ n.fields.dateAndTime }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<app-footer></app-footer>

@@ -38,7 +38,7 @@ export class SubscriptionService {
         if (response.subscriptions.length === 0) {
           this.router.navigate(['']);
         } else {
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/news']);
         }
       });
   }

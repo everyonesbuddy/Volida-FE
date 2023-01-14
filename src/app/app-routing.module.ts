@@ -37,6 +37,7 @@ const routes: Routes = [
   {
     path: 'news',
     component: NewComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'support',
