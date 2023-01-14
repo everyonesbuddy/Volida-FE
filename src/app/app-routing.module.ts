@@ -15,6 +15,7 @@ import { VolidaFilmsComponent } from './components/volida-films/volida-films.com
 import { PpvsComponent } from './components/ppvs/ppvs.component';
 import { FilmPageComponent } from './components/film-page/film-page.component';
 import { NewComponent } from './components/new/new.component';
+import { PaymentProcessedComponent } from './components/payment-processed/payment-processed.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'news',
     component: NewComponent,
+  },
+  {
+    path: 'processed',
+    component: PaymentProcessedComponent,
     canActivate: [AuthGuard],
   },
   {

@@ -31,6 +31,7 @@ import { PpvsComponent } from './components/ppvs/ppvs.component';
 import { FilmPageComponent } from './components/film-page/film-page.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { NewComponent } from './components/new/new.component';
+import { PaymentProcessedComponent } from './components/payment-processed/payment-processed.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { NewComponent } from './components/new/new.component';
     PpvsComponent,
     FilmPageComponent,
     NewComponent,
+    PaymentProcessedComponent,
   ],
   imports: [
     BrowserModule,
