@@ -29,9 +29,6 @@
           <a class="nav-link" routerLink="/news">News</a>
         </li> -->
         <li *ngIf="userIsAuthenticated" class="nav-item">
-          <a class="nav-link" routerLink="/films">BBT 23</a>
-        </li>
-        <li *ngIf="userIsAuthenticated" class="nav-item">
           <a href="#" class="nav-link" (click)="onLogout()">Logout</a>
         </li>
       </ul>
