@@ -101,11 +101,11 @@
 }
 
 #tab-2-content .tab-2-content-top {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 1rem;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  // grid-template-columns: 2fr 1fr;
+  // grid-gap: 1rem;
+  // align-items: center;
+  // justify-content: center;
 }
 
 #tab-2-content .tab-2-content-bottom {
