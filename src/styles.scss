@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --primary-color: #333;
+  --primary-color: #000000;
   --secondary-color: #444;
-  --overlay-color: rgba(0,0,0,0.7);
+  --overlay-color: rgba(0, 0, 0, 0.7);
 }
 
 * {
@@ -11,8 +11,10 @@
   padding: 0;
 }
 
-
-h1,h2,h3,h4 {
+h1,
+h2,
+h3,
+h4 {
   line-height: 1.3;
 }
 
