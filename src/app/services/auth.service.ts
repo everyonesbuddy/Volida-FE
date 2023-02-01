@@ -72,7 +72,7 @@ export class AuthService {
             now.getTime() + expiresInDuration * 1000
           );
           this.saveAuthData(token, expirationDate);
-          this.router.navigate(['/events']);
+          this.router.navigate(['/ppvEvents']);
         }
       });
   }
@@ -105,7 +105,7 @@ export class AuthService {
             now.getTime() + expiresInDuration * 1000
           );
           this.saveAuthData(token, expirationDate);
-          this.router.navigate(['/events']);
+          this.router.navigate(['/ppvEvents']);
         }
       });
   }

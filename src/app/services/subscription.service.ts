@@ -28,6 +28,24 @@ export class SubscriptionService {
       });
   }
 
+  handleDonations(id: any) {
+    const subsData: SubsData = {
+      id: id,
+      auth: { _id: localStorage.getItem('_id') },
+    };
+    let header = new HttpHeaders().set(
+      'Authorization',
+      'Bearer ' + localStorage.getItem('token')
+    );
+    this.http
+      .post('https://volida-be.herokuapp.com/api/create-payment', subsData, {
+        headers: header,
+      })
+      .subscribe((response: any) => {
+        return window.open(response, '_blank');
+      });
+  }
+
   getPaymentStatus() {
     this.http
       .get(
@@ -38,7 +56,7 @@ export class SubscriptionService {
         if (response.subscriptions.length === 0) {
           this.router.navigate(['']);
         } else {
-          this.router.navigate(['/events']);
+          this.router.navigate(['/ppvEvents']);
         }
       });
   }

@@ -32,6 +32,8 @@ import { FilmPageComponent } from './components/film-page/film-page.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { NewComponent } from './components/new/new.component';
 import { PaymentProcessedComponent } from './components/payment-processed/payment-processed.component';
+import { FreeEventsComponent } from './components/free-events/free-events.component';
+import { FreeEventsDetailsComponent } from './components/free-events-details/free-events-details.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { PaymentProcessedComponent } from './components/payment-processed/paymen
     FilmPageComponent,
     NewComponent,
     PaymentProcessedComponent,
+    FreeEventsComponent,
+    FreeEventsDetailsComponent,
   ],
   imports: [
     BrowserModule,

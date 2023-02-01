@@ -16,6 +16,8 @@ import { PpvsComponent } from './components/ppvs/ppvs.component';
 import { FilmPageComponent } from './components/film-page/film-page.component';
 import { NewComponent } from './components/new/new.component';
 import { PaymentProcessedComponent } from './components/payment-processed/payment-processed.component';
+import { FreeEventsComponent } from './components/free-events/free-events.component';
+import { FreeEventsDetailsComponent } from './components/free-events-details/free-events-details.component';
 
 const routes: Routes = [
   {
@@ -31,6 +33,17 @@ const routes: Routes = [
     component: VolidaFilmsComponent,
     canActivate: [AuthGuard],
   },
+  {
+    path: 'freeEvents',
+    component: FreeEventsComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'freeEventsDetailPage/:id',
+    component: FreeEventsDetailsComponent,
+    canActivate: [AuthGuard],
+  },
+
   {
     path: 'ppvs',
     component: PpvsComponent,
@@ -66,7 +79,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'events',
+    path: 'ppvEvents',
     component: DashboardComponent,
     canActivate: [AuthGuard],
   },

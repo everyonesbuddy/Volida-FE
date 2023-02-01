@@ -23,7 +23,10 @@
           <a class="nav-link" routerLink="/login">Login</a>
         </li>
         <li *ngIf="userIsAuthenticated" class="nav-item">
-          <a href="#" class="nav-link" routerLink="/events">Live Music</a>
+          <a href="#" class="nav-link" routerLink="/freeEvents">Free Events</a>
+        </li>
+        <li *ngIf="userIsAuthenticated" class="nav-item">
+          <a href="#" class="nav-link" routerLink="/ppvEvents">PPV Events</a>
         </li>
         <!-- <li *ngIf="!userIsAuthenticated" class="nav-item">
           <a class="nav-link" routerLink="/ppvs">PPVs</a>
