@@ -67,7 +67,7 @@
             </ul>
             <iframe
               id="chat_embed"
-              src="https://www.twitch.tv/embed/everybodysbuddy/chat?parent=https://www.volida.io/"
+              [src]="event.fields.chatLink | safeurl"
               height="500"
               width="350"
             >
