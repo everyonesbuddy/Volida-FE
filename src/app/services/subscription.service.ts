@@ -56,7 +56,7 @@ export class SubscriptionService {
         if (response.subscriptions.length === 0) {
           this.router.navigate(['']);
         } else {
-          this.router.navigate(['/ppvEvents']);
+          this.router.navigate(['/dashboard']);
         }
       });
   }

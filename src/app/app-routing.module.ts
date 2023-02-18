@@ -79,7 +79,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'ppvEvents',
+    path: 'dashboard',
     component: DashboardComponent,
     canActivate: [AuthGuard],
   },

@@ -2,8 +2,8 @@
   <div class="showcase-content">
     <h1>Experience the Best of Live Music on Volida</h1>
     <p>
-      Get Up Close and Personal with Your Favorite Artists on Volida's PPV
-      Concerts.
+      Discover and enjoy our selection of live-streamed concerts from talented
+      up-and-coming artists and established performers.
     </p>
   </div>
 </section>
@@ -18,7 +18,7 @@
 
 <div class="events">
   <div *ngFor="let event of events">
-    <div class="event" (click)="detailPage(event.sys.id)">
+    <div class="event" (click)="paidEventsDetailPage(event.sys.id)">
       <div class="event-thumb-container">
         <img
           src="{{ event.fields.image.fields.file.url }}"
@@ -29,6 +29,33 @@
       <div class="event-description">
         <p class="event-name">{{ event.fields.title }}</p>
         <p class="event-info">{{ event.fields.DateAndTime }}</p>
+        <p class="event-info">{{ event.fields.location }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="tabs">
+  <div class="wrapper">
+    <div id="tab-2">
+      <p>Volida Free Events</p>
+    </div>
+  </div>
+</section>
+
+<div class="events">
+  <div *ngFor="let event of freeEvents">
+    <div class="event" (click)="freeEventDetailPage(event.sys.id)">
+      <div class="event-thumb-container">
+        <img
+          src="{{ event.fields.image.fields.file.url }}"
+          alt="thumbnail"
+          class="event-thumbnail"
+        />
+      </div>
+      <div class="event-description">
+        <p class="event-name">{{ event.fields.title }}</p>
+        <p class="event-info">{{ event.fields.dateAndTime }}</p>
         <p class="event-info">{{ event.fields.location }}</p>
       </div>
     </div>
