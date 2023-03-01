@@ -2,22 +2,22 @@
   width: 100%;
 }
 
-.qr-access{
+.qr-access {
   background: #fff200;
   padding: 5px;
   text-align: center;
 }
 
-.profile-rate-div{
+.profile-rate-div {
   background: #0a2847;
   color: white;
 }
 
-.hidden-xs{
+.hidden-xs {
   margin-top: 54px;
 }
 
-.custom-btn{
+.custom-btn {
   background: none;
   border: 0;
   border-radius: 5px;
@@ -29,21 +29,21 @@
   height: auto;
 }
 
-.mailsent{
+.mailsent {
   color: red;
   padding: 5px;
   background: #ddd;
 }
 
-.profile-detail-div{
-   margin-top: 20px;
+.profile-detail-div {
+  margin-top: 20px;
 }
 
-.profile-detail-ul h4{
+.profile-detail-ul h4 {
   margin: 10px 0;
 }
 
-.purchaseBtn{
+.purchaseBtn {
   background-color: var(--primary-color);
   border-radius: 30px;
   font-size: 1.1rem;
@@ -51,4 +51,13 @@
   color: #fff;
   padding: 0.8rem 1.5rem;
   cursor: pointer;
+}
+
+.donation-buttons {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  align-items: center;
+  justify-content: center;
 }

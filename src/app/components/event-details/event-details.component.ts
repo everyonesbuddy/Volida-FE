@@ -8,10 +8,10 @@ import Talk from 'talkjs';
 @Component({
   selector: 'app-event-details',
   templateUrl: './event-details.component.html',
-  styleUrls: ['./event-details.component.scss']
+  styleUrls: ['./event-details.component.scss'],
 })
 export class EventDetailsComponent implements OnInit {
-  event:any = [];
+  event: any = [];
   amountInCents: any = '';
   hideVideolink: boolean = false;
   private inbox: Talk.Inbox | any;
@@ -19,36 +19,45 @@ export class EventDetailsComponent implements OnInit {
 
   @ViewChild('talkjsContainer') talkjsContainer!: ElementRef;
 
-  constructor(private subscriptionService: SubscriptionService, private eventService: EventsService, private activatedRoute: ActivatedRoute, private talkService: TalkService) { }
+  constructor(
+    private subscriptionService: SubscriptionService,
+    private eventService: EventsService,
+    private activatedRoute: ActivatedRoute,
+    private talkService: TalkService
+  ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(
-      params => {
-        // let id = params['id'];
-        // this.eventService.getEventDetails(id).subscribe(events => {
-            // this.event = events;
-            // this.amountInCents = this.event.fields.amountInCents
-            // this.hideVideolink = this.event.fields.hideVideolink;
-        let id = params['id'];
-        this.eventService.getEvent(id)
-          .then(events => {
-            this.event = events;
-            this.amountInCents = events.fields.amountInCents
-             this.checkPayment().subscribe((res:any)=>{
-              res.subscriptions.forEach((val:any)=>{
-                if(!this.hideVideolink){
-                  this.hideVideolink = (val.amount == this.amountInCents && val.amount_received == this.amountInCents);
-                }
-              })
-              return res.subscriptions;
-            })
+    this.activatedRoute.params.subscribe((params) => {
+      // let id = params['id'];
+      // this.eventService.getEventDetails(id).subscribe(events => {
+      // this.event = events;
+      // this.amountInCents = this.event.fields.amountInCents
+      // this.hideVideolink = this.event.fields.hideVideolink;
+      let id = params['id'];
+      this.eventService.getEvent(id).then((events) => {
+        this.event = events;
+        this.amountInCents = events.fields.amountInCents;
+        this.checkPayment().subscribe((res: any) => {
+          res.subscriptions.forEach((val: any) => {
+            if (!this.hideVideolink) {
+              this.hideVideolink =
+                val.amount == this.amountInCents &&
+                val.amount_received == this.amountInCents;
+            }
           });
-      })
-      this.createInbox();
-    }
+          return res.subscriptions;
+        });
+      });
+    });
+    this.createInbox();
+  }
 
   onPayment(id: any) {
     this.subscriptionService.handlePayment(id);
+  }
+
+  onDonnationPayment(id: any) {
+    this.subscriptionService.handleDonations(id);
   }
 
   checkPayment(): any {
@@ -59,8 +68,12 @@ export class EventDetailsComponent implements OnInit {
     const session = await this.talkService.createCurrentSession();
     this.inbox = await this.talkService.createInbox(session);
     // this.inbox.mount(this.talkjsContainer.nativeElement);
-    setTimeout(function(thisobj:any){
-      thisobj.inbox.mount(thisobj.talkjsContainer.nativeElement);
-    },3000, this);
+    setTimeout(
+      function (thisobj: any) {
+        thisobj.inbox.mount(thisobj.talkjsContainer.nativeElement);
+      },
+      3000,
+      this
+    );
   }
 }
