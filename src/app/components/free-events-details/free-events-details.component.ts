@@ -31,10 +31,6 @@ export class FreeEventsDetailsComponent implements OnInit {
     });
   }
 
-  onPayment(id: any) {
-    this.subscriptionService.handleDonations(id);
-  }
-
   checkPayment(): any {
     return this.subscriptionService.checkPayment();
   }

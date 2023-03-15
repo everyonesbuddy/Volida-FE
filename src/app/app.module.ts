@@ -34,6 +34,9 @@ import { NewComponent } from './components/new/new.component';
 import { PaymentProcessedComponent } from './components/payment-processed/payment-processed.component';
 import { FreeEventsComponent } from './components/free-events/free-events.component';
 import { FreeEventsDetailsComponent } from './components/free-events-details/free-events-details.component';
+import { SubscriptionPageComponent } from './components/subscription-page/subscription-page.component';
+import { SubscriptionCardComponent } from './components/subscription-card/subscription-card.component';
+import { SettingsPageComponent } from './components/settings-page/settings-page.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +64,9 @@ import { FreeEventsDetailsComponent } from './components/free-events-details/fre
     PaymentProcessedComponent,
     FreeEventsComponent,
     FreeEventsDetailsComponent,
+    SubscriptionPageComponent,
+    SubscriptionCardComponent,
+    SettingsPageComponent,
   ],
   imports: [
     BrowserModule,

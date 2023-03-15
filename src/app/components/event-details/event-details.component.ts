@@ -52,14 +52,6 @@ export class EventDetailsComponent implements OnInit {
     this.createInbox();
   }
 
-  onPayment(id: any) {
-    this.subscriptionService.handlePayment(id);
-  }
-
-  onDonnationPayment(id: any) {
-    this.subscriptionService.handleDonations(id);
-  }
-
   checkPayment(): any {
     return this.subscriptionService.checkPayment();
   }

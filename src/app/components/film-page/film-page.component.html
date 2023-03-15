@@ -52,7 +52,7 @@
                 <h4>About this event</h4>
                 {{ event.fields.description }}
               </li>
-              <li class="video" *ngIf="hideVideolink">
+              <li class="video">
                 <h4>Live Stream</h4>
                 <ul class="list-unstyled">
                   <iframe
@@ -65,14 +65,14 @@
                 </ul>
               </li>
             </ul>
-            <button
+            <!-- <button
               class="btn btn-block purchaseBtn"
               (click)="onPayment(event.fields.stripePriceId)"
               *ngIf="!hideVideolink"
             >
               Buy Livestream ${{ event.fields.amountInCents / 100
               }}<small> USD </small>
-            </button>
+            </button> -->
           </div>
         </div>
       </div>

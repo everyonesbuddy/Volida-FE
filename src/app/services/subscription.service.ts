@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class SubscriptionService {
   constructor(private http: HttpClient, private router: Router) {}
 
-  handlePayment(id: any) {
+  handleSubscription(id: any) {
     const subsData: SubsData = {
       id: id,
       auth: { _id: localStorage.getItem('_id') },
@@ -20,41 +20,60 @@ export class SubscriptionService {
       'Bearer ' + localStorage.getItem('token')
     );
     this.http
-      .post('https://volida-be.herokuapp.com/api/create-payment', subsData, {
-        headers: header,
-      })
+      .post(
+        'https://volida-be.herokuapp.com/api/create-subscription',
+        subsData,
+        {
+          headers: header,
+        }
+      )
       .subscribe((response: any) => {
         return window.open(response, '_self');
       });
   }
 
-  handleDonations(id: any) {
-    const subsData: SubsData = {
-      id: id,
-      auth: { _id: localStorage.getItem('_id') },
-    };
-    let header = new HttpHeaders().set(
-      'Authorization',
-      'Bearer ' + localStorage.getItem('token')
-    );
-    this.http
-      .post('https://volida-be.herokuapp.com/api/create-payment', subsData, {
-        headers: header,
-      })
-      .subscribe((response: any) => {
-        return window.open(response, '_blank');
-      });
-  }
+  // handleDonations(id: any) {
+  //   const subsData: SubsData = {
+  //     id: id,
+  //     auth: { _id: localStorage.getItem('_id') },
+  //   };
+  //   let header = new HttpHeaders().set(
+  //     'Authorization',
+  //     'Bearer ' + localStorage.getItem('token')
+  //   );
+  //   this.http
+  //     .post('https://volida-be.herokuapp.com/api/create-payment', subsData, {
+  //       headers: header,
+  //     })
+  //     .subscribe((response: any) => {
+  //       return window.open(response, '_blank');
+  //     });
+  // }
 
-  getPaymentStatus() {
+  // getPaymentStatus() {
+  //   this.http
+  //     .get(
+  //       'https://volida-be.herokuapp.com/api/payment-status/?_id=' +
+  //         localStorage.getItem('_id')
+  //     )
+  //     .subscribe((response: any) => {
+  //       if (response.subscriptions.length === 0) {
+  //         this.router.navigate(['']);
+  //       } else {
+  //         this.router.navigate(['/dashboard']);
+  //       }
+  //     });
+  // }
+
+  getSubscriptionStatus() {
     this.http
       .get(
-        'https://volida-be.herokuapp.com/api/payment-status/?_id=' +
+        'https://volida-be.herokuapp.com/api/subscription-status/?_id=' +
           localStorage.getItem('_id')
       )
       .subscribe((response: any) => {
         if (response.subscriptions.length === 0) {
-          this.router.navigate(['']);
+          this.router.navigate(['/subscriptions']);
         } else {
           this.router.navigate(['/dashboard']);
         }

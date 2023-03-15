@@ -66,28 +66,6 @@
               </li>
             </ul>
             <h4>Support {{ event.fields.title }}</h4>
-            <div class="donation-buttons">
-              <button
-                class="btn btn-lg purchaseBtn"
-                (click)="onPayment(event.fields.stripePriceId1)"
-              >
-                ${{ event.fields.amountInCents1 / 100 }}<small> USD </small>
-              </button>
-
-              <button
-                class="btn btn-lg purchaseBtn"
-                (click)="onPayment(event.fields.stripePriceId2)"
-              >
-                ${{ event.fields.amountInCents2 / 100 }}<small> USD </small>
-              </button>
-
-              <button
-                class="btn btn-lg purchaseBtn"
-                (click)="onPayment(event.fields.stripePriceId3)"
-              >
-                ${{ event.fields.amountInCents3 / 100 }}<small> USD </small>
-              </button>
-            </div>
           </div>
         </div>
       </div>

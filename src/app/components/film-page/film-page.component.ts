@@ -50,10 +50,6 @@ export class FilmPageComponent implements OnInit {
     this.createInbox();
   }
 
-  onPayment(id: any) {
-    this.subscriptionService.handlePayment(id);
-  }
-
   checkPayment(): any {
     return this.subscriptionService.checkPayment();
   }

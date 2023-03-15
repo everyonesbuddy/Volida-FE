@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EventDetailsComponent } from './components/event-details/event-details.component';
+import { SettingsPageComponent } from './components/settings-page/settings-page.component';
+import { SubscriptionPageComponent } from './components/subscription-page/subscription-page.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
@@ -43,7 +45,11 @@ const routes: Routes = [
     component: FreeEventsDetailsComponent,
     canActivate: [AuthGuard],
   },
-
+  {
+    path: 'settings',
+    component: SettingsPageComponent,
+    canActivate: [AuthGuard],
+  },
   {
     path: 'ppvs',
     component: PpvsComponent,
@@ -68,6 +74,11 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignUpComponent,
+  },
+  {
+    path: 'subscriptions',
+    component: SubscriptionPageComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'referAFriend',
