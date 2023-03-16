@@ -24,6 +24,9 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    //check subscription status
+    this.subscriptionService.getSubscriptionStatus();
+
     //get all events
     this.eventService.getAllEvents().then((events) => {
       this.events = events;

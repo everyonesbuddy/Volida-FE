@@ -105,7 +105,7 @@ export class AuthService {
             now.getTime() + expiresInDuration * 1000
           );
           this.saveAuthData(token, expirationDate);
-          this.router.navigate(['/subscriptions']);
+          this.router.navigate(['/stripe/success']);
         }
       });
   }
