@@ -66,18 +66,36 @@ export class SubscriptionService {
   // }
 
   getSubscriptionStatus() {
+    let accessGranted = false;
     this.http
       .get(
         'https://volida-be.herokuapp.com/api/subscription-status/?_id=' +
           localStorage.getItem('_id')
       )
       .subscribe((response: any) => {
-        // console.log(response);
-        if (response.subscriptions.length === 0) {
-          this.router.navigate(['/subscriptions']);
-        } else {
-          this.router.navigate(['/dashboard']);
+        for (let i = 0; i < response.subscriptions.length; i++) {
+          if (
+            response.subscriptions.length > 0 &&
+            response.subscriptions[i].status === 'active'
+          ) {
+            accessGranted = true;
+            break;
+          }
         }
+        if (accessGranted) {
+          // Grant access
+          console.log('Access granted');
+          this.router.navigate(['/dashboard']);
+        } else {
+          // Deny access
+          console.log('Access denied');
+          this.router.navigate(['/subscriptions']);
+        }
+        // if (response.subscriptions.length === 0) {
+        //   this.router.navigate(['/subscriptions']);
+        // } else {
+        //   this.router.navigate(['/dashboard']);
+        // }
       });
   }
 
