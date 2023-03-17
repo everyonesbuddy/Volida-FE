@@ -72,6 +72,7 @@ export class SubscriptionService {
           localStorage.getItem('_id')
       )
       .subscribe((response: any) => {
+        // console.log(response);
         if (response.subscriptions.length === 0) {
           this.router.navigate(['/subscriptions']);
         } else {

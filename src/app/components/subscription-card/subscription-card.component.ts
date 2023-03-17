@@ -26,6 +26,7 @@ export class SubscriptionCardComponent implements OnInit {
     this.http
       .get('https://volida-be.herokuapp.com/api/prices')
       .subscribe((response) => {
+        // console.log(response);
         this.prices = response;
         return this.prices;
       });
