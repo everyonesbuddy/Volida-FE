@@ -1,23 +1,97 @@
+<h4 class="text-center">One Time Price</h4>
 <div class="row row-cols-1 pt-5 mb-3 text-center">
-  <div *ngFor="let price of prices" class="col">
+  <!-- Flat Fee -->
+  <div class="col">
     <div class="card mb-6 rounded-3 shadow-sm">
       <div class="card-header py-3">
-        <h4 class="my-0 fw-normal">{{ price.nickname }}</h4>
+        <h4 class="my-0 fw-normal">Flat Price</h4>
       </div>
       <div class="card-body">
         <h1 class="card-title pricing-card-title">
-          ${{ price.unit_amount / 100 }}
+          $3000
           <!-- <small class="text-muted fw-light">every month</small> -->
         </h1>
         <ul class="list-unstyled mt-3 mb-4">
-          <li>Stream music shows and concerts in real time.</li>
-          <li>Access Live streams from comedy clubs and shows.</li>
-          <li>Access a wide range of comedy specials.</li>
+          <li>
+            <p>
+              One-time payment for building and customizing the white-label
+              solution.
+            </p>
+          </li>
+          <li>
+            <p>Includes initial development, customization, and branding.</p>
+          </li>
+          <li>
+            <p>Provides full ownership and control.</p>
+          </li>
         </ul>
 
-        <button class="w-100 btn btn-lg" (click)="onSubscribe(price.id)">
-          Subscribe
-        </button>
+        <a href="https://buy.stripe.com/fZeeXQeS0fj96n6eUU" target="_blank">
+          <button class="w-100 btn btn-lg">Subscribe</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4 class="text-center">Add-On Prices</h4>
+<!-- Add On -->
+<div class="row row-cols-1 pt-5 mb-3 text-center">
+  <!-- Montly Add-On -->
+  <div class="col">
+    <div class="card mb-6 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Monthly Add-On</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">
+          $200 / Month
+          <!-- <small class="text-muted fw-light">every month</small> -->
+        </h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>
+            <p>Covers monthly maintenance, support, and updates.</p>
+          </li>
+          <li>
+            <p>Regular bug fixes and enhancements.</p>
+          </li>
+          <li>
+            <p>Access to new features and improvements.</p>
+          </li>
+        </ul>
+
+        <a href="https://buy.stripe.com/dR64jc8tC3ArcLu7st" target="_blank">
+          <button class="w-100 btn btn-lg">Subscribe</button></a
+        >
+      </div>
+    </div>
+  </div>
+  <!-- Annual Add-On -->
+  <div class="col">
+    <div class="card mb-6 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Yearly Add-On</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">
+          $1800 / Year
+          <!-- <small class="text-muted fw-light">every month</small> -->
+        </h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>
+            <p>Covers yearly maintenance, support, and updates.</p>
+          </li>
+          <li>
+            <p>Regular bug fixes and enhancements.</p>
+          </li>
+          <li>
+            <p>Access to new features and improvements.</p>
+          </li>
+        </ul>
+
+        <a href="https://buy.stripe.com/00gaHAdNW1sjfXG002" target="_blank"
+          ><button class="w-100 btn btn-lg">Subscribe</button></a
+        >
       </div>
     </div>
   </div>

@@ -3,8 +3,8 @@
   height: 70vh;
   font-family: sans-serif;
   position: relative;
-  background: url(../../../assets/danny-howe-bn-D2bCvpik-unsplash.jpg) no-repeat
-    center center/cover;
+  background: url(../../../assets/ramiro-pianarosa-8hW2ZB4OHZ0-unsplash.jpg)
+    no-repeat center center/cover;
 }
 
 .showcase-content {
@@ -30,7 +30,7 @@
 
 .showcase-content p {
   color: #fff;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.2rem;
   line-height: 1.1;
   margin: 0 0 2rem;
@@ -147,6 +147,14 @@ button {
   padding: 0.8rem 1.5rem;
   cursor: pointer;
   font-family: "Ubuntu", sans-serif;
+}
+
+.button-wrapper {
+  display: flex;
+}
+
+.header-buttons {
+  margin: 5px;
 }
 
 @media (max-width: 960px) {

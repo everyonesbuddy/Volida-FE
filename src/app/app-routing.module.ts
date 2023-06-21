@@ -76,9 +76,8 @@ const routes: Routes = [
     component: SignUpComponent,
   },
   {
-    path: 'subscriptions',
+    path: 'pricing',
     component: SubscriptionPageComponent,
-    canActivate: [AuthGuard],
   },
   {
     path: 'referAFriend',
